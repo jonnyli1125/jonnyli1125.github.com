@@ -70,9 +70,15 @@
 	var started = false;
 	$("#start").click(function() {
 		if (started) return false;
+		else if (!started && ($(".countdownarea").is(":visible"))) { 
+			$("h3").show();
+			now = Math.round((new Date()).getTime() / 1000); // unix timestamp of now.
+			$("#counterinput").text("The next post to end with the number " + $("#nextpost").val() + " will show in approximately");
+			$("#countertimeleft").text("Calculating...");
+			countdown();
+		}
 		now = Math.round((new Date()).getTime() / 1000); // unix timestamp of now.
 		$("#counterinput").text("The next post to end with the number " + $("#nextpost").val() + " will show in approximately");
-		//$("#nextpost").attr('disabled', 'disabled');
 		if (!($(".countdownarea").is(":visible"))) { 
 			$("#countertimeleft").text("Calculating...");
 			$(".countdownarea").slideDown(300);
@@ -96,7 +102,11 @@
 			timeleft--;
 			$("#countertimeleft").text(timeleft);
 			if (timeleft > 0) countdown();
-			else { $("h3").hide(); $("#countertimeleft").text("Post number " +  Math.round((new Date()).getTime() / 1000) + " is now!"); }
+			else { 
+				$("h3").hide();
+				$("#countertimeleft").text("Post number " +  Math.round((new Date()).getTime() / 1000) + " is now!");
+				started = false; 
+			}
 		}, 1000);
 	}
 	function endsWith(str, suffix) { return str.indexOf(suffix, str.length - suffix.length) !== -1; }
