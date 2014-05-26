@@ -1,4 +1,2 @@
-Jonny's GitHub o-o
-
 This work is licensed under a Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License. 
 You may obtain a copy of the license at: http://creativecommons.org/licenses/by-nc-sa/3.0/.
