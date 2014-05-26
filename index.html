@@ -11,7 +11,7 @@
         <link href="https://cdnjs.cloudflare.com/ajax/libs/foundicons/3.0.0/foundation-icons.css" rel="stylesheet">
         <link href="http://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
         <style>
-            a.nav-icon { font-size: 24px !important; }
+            a.nav-icon { font-size: 24px !important; transition: all .25s ease; }
             h1, h2, h3 { font-family: "Open Sans", "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif !important; }
             .row { max-width: 960px; margin: 0 auto; }
             #main { padding-top: 100px; background: #2c3e50; height: 650px; }
@@ -24,6 +24,10 @@
             #footer p { margin-bottom: 0; color: white; }
             p, h5 { font-family: "Lato"; }
             .avatar { margin-top: 50px; border-radius: 125px; }
+            #tumblr:hover { color: #32506d; }
+            #twitter:hover { color: #00aced; }
+            #facebook:hover { color: #3b5998; }
+            #github:hover { color: #eee; }
         </style>
     </head>
     <body>
@@ -36,10 +40,10 @@
                 </ul>
                 <section class="top-bar-section">
                     <ul class="right">
-                        <li><a class="nav-icon" target="_blank" href="http://blog.jonny.li/"><i class="fi-social-tumblr"></i></a></li>
-                        <li><a class="nav-icon" target="_blank" href="https://twitter.com/jonnylii"><i class="fi-social-twitter"></i></a></li>
-                        <li><a class="nav-icon" target="_blank" href="https://facebook.com/jonnylii"><i class="fi-social-facebook"></i></a></li>
-                        <li><a class="nav-icon" target="_blank" href="https://github.com/jonnyli1125"><i class="fi-social-github"></i></a></li>
+                        <li><a id="tumblr" class="nav-icon" target="_blank" href="http://blog.jonny.li/"><i class="fi-social-tumblr"></i></a></li>
+                        <li><a id="twitter" class="nav-icon" target="_blank" href="https://twitter.com/jonnylii"><i class="fi-social-twitter"></i></a></li>
+                        <li><a id="facebook" class="nav-icon" target="_blank" href="https://facebook.com/jonnylii"><i class="fi-social-facebook"></i></a></li>
+                        <li><a id="github" class="nav-icon" target="_blank" href="https://github.com/jonnyli1125"><i class="fi-social-github"></i></a></li>
                         <li><a class="nav-icon" target="_blank" href="mailto:myself@jonny.li"><i class="fi-mail"></i></a></li>
                     </ul>
                 </section>
