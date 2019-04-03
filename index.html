@@ -102,7 +102,7 @@
       		<img src="https://secure.gravatar.com/avatar/edecc92c73ca5c68be7511b9a941ea3e?size=150" class="avatar">
       		<div class="content">
       			<h1 class="name" id="name">jonny li</h1>
-      			<p class="description" id="description"><span class="ww">university of toronto computer science/linguistics. </span><span class="ww">studying abroad at utokyo.</span></p>
+      			<p class="description" id="description"></p>
       			<ul class="list-inline links">
       				<li class="list-inline-item"><a target="_blank" href="./resume.pdf" id="resume">resume</a></li>
       				<li class="list-inline-item"><a target="_blank" href="https://github.com/jonnyli1125">github</a></li>
@@ -114,47 +114,47 @@
     </div>
     <script type="text/javascript">
       (function() {
+        var wrapSpans = function(strs) {
+          return '<span class="ww">' + strs.join('</span><span class="ww">') +
+              '</span>';
+        };
         var i18n = {
           'en': {
-      	  'name': 'jonny li',
-      	  'description': [
-      	    'university of toronto computer science/linguistics. ',
-      		'studying abroad at utokyo.'
-      	  ],
-      	  'resume': 'resume'
-      	},
-      	'ja': {
-      	  'name': '李 介鴻',
-      	  'description': [
-      	    'トロント大学でコンピューター科学と言語学を専攻。 ',
-      		'東京大学で交換留学中。'
-      	  ],
-      	  'resume': '履歴書 (英語)'
-      	},
-      	'cn': {
-      	  'name': '李 介鴻',
-      	  'description': [
-      	    '多倫多大学主修計算機科学和言語学。',
-      		'在東京大学交換留学中。'
-      	  ],
-      	  'resume': 'resume'
-      	}
+        	  'name': 'jonny li',
+        	  'description': wrapSpans(
+                ['university of toronto computer science/linguistics.&nbsp;',
+                'studying abroad at utokyo.']),
+        	  'resume': 'resume'
+        	},
+        	'ja': {
+        	  'name': '李 介鴻',
+        	  'description': wrapSpans([
+                wrapSpans(['トロント大学で', 'コンピューター科学と',
+                '言語学を専攻。']),
+                wrapSpans(['東京大学で', '交換留学中。'])]),
+        	  'resume': '履歴書 (英語)'
+        	},
+        	'cn': {
+        	  'name': '李 介鴻',
+        	  'description': wrapSpans(
+                [wrapSpans(['多倫多大学主修', '計算機科学和言語学。']),
+                '在東京大学交換留学中。']),
+        	  'resume': 'resume'
+        	}
         };
         var setLanguage = function(lang) {
-          document.getElementById('name').innerHTML = i18n[lang].name;
-        	document.getElementById('description').innerHTML =
-              '<span class="ww">' + i18n[lang].description[0] +
-              '</span><span class="ww">' + i18n[lang].description[1] +
-              '</span>';
-        	document.getElementById('resume').innerHTML = i18n[lang].resume;
-          };
-          document.querySelectorAll('.language a').forEach(function(elm) {
-            elm.addEventListener('click', function(e) {
-        	  setLanguage(e.target.id);
-        	  document.querySelector('.language a.link-unstyled').className = '';
-        	  e.target.className = 'link-unstyled';
-        	});
+          ['name', 'description', 'resume'].forEach(function(elm) {
+            document.getElementById(elm).innerHTML = i18n[lang][elm];
+          });
+        };
+        document.querySelectorAll('.language a').forEach(function(elm) {
+          elm.addEventListener('click', function(e) {
+          setLanguage(e.target.id);
+          document.querySelector('.language a.link-unstyled').className = '';
+          e.target.className = 'link-unstyled';
         });
+        });
+        setLanguage('en');
       })();
     </script>
   </body>
