@@ -92,9 +92,9 @@
     <div class="container">
       <div class="language">
         <ul class="list-inline">
-          <li class="list-inline-item"><a id="en" href="#" class="link-unstyled">english</a></li>
-          <li class="list-inline-item"><a id="ja" href="#">日本語</a></li>
-          <li class="list-inline-item"><a id="cn" href="#">中文</a></li>
+          <li class="list-inline-item"><a id="en" href="#en" class="link-unstyled">english</a></li>
+          <li class="list-inline-item"><a id="ja" href="#ja">日本語</a></li>
+          <li class="list-inline-item"><a id="cn" href="#cn">中文</a></li>
         </ul>
       </div>
       <div class="wrapper-outer">
@@ -149,12 +149,12 @@
         };
         document.querySelectorAll('.language a').forEach(function(elm) {
           elm.addEventListener('click', function(e) {
-          setLanguage(e.target.id);
-          document.querySelector('.language a.link-unstyled').className = '';
-          e.target.className = 'link-unstyled';
+            setLanguage(e.target.id);
+            document.querySelector('.language a.link-unstyled').className = '';
+            e.target.className = 'link-unstyled';
+          });
         });
-        });
-        setLanguage('en');
+        setLanguage(window.location.hash.substring(1) || "en");
       })();
     </script>
   </body>
