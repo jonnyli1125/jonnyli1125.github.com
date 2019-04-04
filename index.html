@@ -146,12 +146,12 @@
           ['name', 'description', 'resume'].forEach(function(elm) {
             document.getElementById(elm).innerHTML = i18n[lang][elm];
           });
+          document.querySelector('.language a.link-unstyled').className = '';
+          document.getElementById(lang).className = 'link-unstyled';
         };
         document.querySelectorAll('.language a').forEach(function(elm) {
           elm.addEventListener('click', function(e) {
             setLanguage(e.target.id);
-            document.querySelector('.language a.link-unstyled').className = '';
-            e.target.className = 'link-unstyled';
           });
         });
         setLanguage(window.location.hash.substring(1) || "en");
