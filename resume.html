@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Jonny Li</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/7.0.0/normalize.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/paper-css/0.4.1/paper.css">
+  <style>
+  @page { size: A4 }
+  body {
+    font-family: 'Segoe UI', 'Meiryo UI', sans-serif;
+  }
+  h1, h2, h3, h4 {
+    font-weight: normal;
+    margin: 0 0 10px;
+  }
+  h2 {
+    margin-bottom: 15px;
+  }
+  a, a:hover, a:visited {
+    color: #0067b8;
+    text-decoration: none;
+  }
+  .profile {
+    border-bottom: 1px solid #e9e9e9;
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+  }
+  .sectionObject {
+    margin-bottom: 15px;
+  }
+  .sectionObject h4 {
+    margin-bottom: 7px;
+  }
+  .sectionObject p {
+    color: #666;
+    font-size: 14px;
+    margin-top: 0;
+  }
+  .sectionObject span {
+    color: #666;
+    float: right;
+    font-size: 12px;
+  }
+  </style>
+</head>
+<body class="A4">
+  <section class="sheet padding-10mm">
+    <div class="profile"></div>
+    <div class="experience"></div>
+    <div class="education"></div>
+    <div class="certifications"></div>
+    <div class="interests"></div>
+  </section>
+  <script type="text/javascript">
+  (function() {
+    var i18n = {
+      "en": {
+        "profile": {
+          "name": "Jonny Li",
+          "description": 'Software Engineer / Tokyo, Japan / <a href="mailto:myself@jonny.li">myself@jonny.li</a>'
+        },
+        "sections": [
+          {
+            "name": "experience",
+            "title": "Experience",
+            "objects": [
+              {
+                "title": "Software Intern",
+                "name": "株式会社ミライセルフ (Meryeself)",
+                "duration": "September 2018 – Present",
+                "description": 'Developed <a href="https://mitsucari.com" target="_blank">mitsucari</a>, a website for an artificially intelligent job matching service. Utilized <strong>Ruby on Rails, PostgreSQL, HTML/CSS, jQuery, Bootstrap, SASS</strong>.'
+              },
+              {
+                "title": "Creator",
+                "name": '<a href="https://github.com/jonnyli1125/tango" target="_blank">tango</a>',
+                "duration": "April 2019 – Present",
+                "description": 'Developed a <a href="https://en.wikipedia.org/wiki/Spaced_repetition" target="_blank">spaced repetition</a> software (flashcard software) targeted towards language learners who are learning vocabulary. Utilized <strong>Electron, Node.js, TypeScript, React</strong>.'
+              },
+              {
+                "title": "Creator",
+                "name": '<a href="https://github.com/jonnyli1125/jp-bot" target="_blank">jp-bot</a>',
+                "duration": "April 2019 – Present",
+                "description": 'Developed a <a href="https://discord.gg">Discord</a> chat bot for a Japanese language learning community that I manage, with online dictionary web scrapers and server moderation features. Created a website to display server statistics. Utilized <strong>Python, asyncio, Heroku, MongoDB, Flask</strong>.'
+              },
+              {
+                "title": "Creator",
+                "name": '<a href="https://github.com/jonnyli1125/MCDawn" target="_blank">MCDawn</a>',
+                "duration": "July 2012 – April 2013",
+                "description": 'Developed a Minecraft Classic server that interacted with official game client. Implemented features such as server moderation tools, block history and undo, building tools, inter-server chat and bans, plugin support. Created a website to display list of online servers. Utilized <strong>C#, MySQL, PHP, HTML/CSS, jQuery, Bootstrap</strong>.'
+              },
+              {
+                "title": "Webmaster",
+                "name": 'University of Toronto Japan Association',
+                "duration": "October 2016 – August 2018",
+                "description": "Utilized <strong>Wordpress, HTML/CSS</strong> to manage website for university club. Organized club events such as culture festivals and language exchanges to promote and facilitate culture exchange between Japanese and Canadian students."
+              },
+              {
+                "title": "Workshops Lead",
+                "name": 'Neurotech UofT',
+                "duration": "September 2017 – April 2018",
+                "description": "University club. Created tutorial workshops for students, such as introduction to programming (<strong>Python</strong>) and introduction to version control (<strong>Git</strong>)."
+              }
+            ]
+          },
+          {
+            "name": "education",
+            "title": "Education",
+            "objects": [
+              {
+                "school": "University of Toronto",
+                "degree": "Bachelors",
+                "major": "Computer Science and Linguistics",
+                "graduation": "Expected graduation in 2020 November"
+              },
+              {
+                "school": "University of Tokyo",
+                "degree": "Foreign exchange",
+                "major": "University-wide Student Exchange Program (USTEP)",
+                "graduation": "September 2018 – August 2019"
+              }
+            ]
+          },
+          {
+            "name": "certifications",
+            "title": "Certifications",
+            "objects": [
+              {
+                "organization": "Japan Foundation",
+                "name": "Japanese Language Proficiency Test N1（日本語能力試験１級）",
+                "date": "December 2017"
+              }
+            ]
+          },
+          {
+            "name": "interests",
+            "title": "Interests",
+            "objects": [
+              {
+                "name": "University of Toronto Go Club, 東京大学囲碁部 (University of Tokyo Go Club)",
+                "description": "I was inspired by AlphaGo's historical win against a top human professional in 2016 to start playing Go."
+              },
+              {
+                "name": "日本語を勉強しましょう (Let's Learn Japanese) - Language learning community",
+                "description": "Owner of Discord server with over 4000 members. Online study group for all levels of Japanese learners, since 2016."
+              }
+            ]
+          }
+        ]
+      }
+    };
+    var language = "en";
+    var profile = i18n[language].profile;
+    document.getElementsByClassName("profile")[0].innerHTML = "<h1>" + profile.name + "</h1>" +
+                                                              "<div>" + profile.description + "</div>";
+    i18n[language].sections.forEach(function(section, section_index) {
+      var sectionElement = document.getElementsByClassName(section.name)[0];
+      sectionElement.innerHTML = "<h2>" + section.title + "</h2>";
+      section.objects.forEach(function(object, object_index) {
+        var objectContents = "";
+        switch (section.name) {
+          case "experience":
+            objectContents += '<div class="sectionObject">' +
+                                '<span>' + object.duration + '</span>' +
+                                '<h4>' + object.title + ' - ' + object.name + '</h4>' +
+                                '<p>' + object.description + '</p>' +
+                              '</div>';
+            break;
+          case "education":
+            objectContents += '<div class="sectionObject">' +
+                                '<h4>' + object.school + '</h4>' +
+                                '<p>' + object.degree + ', ' + object.major + '. ' + object.graduation + '.</p>' +
+                              '</div>';
+            break;
+          case "certifications":
+            objectContents += '<div class="sectionObject">' +
+                                '<span>' + object.date + '</span>' +
+                                '<h4>' + object.organization + ' - ' + object.name + '</h4>' +
+                              '</div>';
+            break;
+          case "interests":
+            objectContents += '<div class="sectionObject">' +
+                                '<h4>' + object.name + '</h4>' +
+                                '<p>' + object.description + '</p>' +
+                              '</div>'
+            break;
+        }
+        sectionElement.innerHTML += objectContents;
+      });
+    });
+  })();
+  </script>
+</body>
+</html>
