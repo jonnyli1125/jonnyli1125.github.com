@@ -37,6 +37,9 @@
     font-weight: bold;
     margin: 0 0 7px;
   }
+  .sectionObject h4 a {
+    color: inherit;
+  }
   .sectionObject p {
     color: #666;
     font-size: 14px;
@@ -73,36 +76,42 @@
               {
                 "title": "Software Intern",
                 "name": "株式会社ミライセルフ (Meryeself)",
+                "url": "https://mitsucari.com",
                 "duration": "September 2018 – Present",
                 "description": 'Developed <a href="https://mitsucari.com" target="_blank">mitsucari</a>, a website for an artificially intelligent job matching service. Utilized <strong>Ruby on Rails, PostgreSQL, HTML/CSS, jQuery, Bootstrap, SASS</strong>.'
               },
               {
                 "title": "Creator",
-                "name": '<a href="https://github.com/jonnyli1125/tango" target="_blank">tango</a>',
+                "name": "tango",
+                "url": "https://github.com/jonnyli1125/tango",
                 "duration": "April 2019 – Present",
                 "description": 'Developed a <a href="https://en.wikipedia.org/wiki/Spaced_repetition" target="_blank">spaced repetition</a> software (flashcard software) targeted towards language learners who are learning vocabulary. Utilized <strong>Electron, Node.js, TypeScript, React</strong>.'
               },
               {
                 "title": "Creator",
-                "name": '<a href="https://github.com/jonnyli1125/jp-bot" target="_blank">jp-bot</a>',
+                "name": "jp-bot",
+                "url": "https://github.com/jonnyli1125/jp-bot",
                 "duration": "April 2019 – Present",
                 "description": 'Developed a <a href="https://discord.gg">Discord</a> chat bot for a Japanese language learning community that I manage, with online dictionary web scrapers and server moderation features. Created a website to display server statistics. Utilized <strong>Python, asyncio, Heroku, MongoDB, Flask</strong>.'
               },
               {
                 "title": "Creator",
-                "name": '<a href="https://github.com/jonnyli1125/MCDawn" target="_blank">MCDawn</a>',
+                "name": "MCDawn",
+                "url": "https://github.com/jonnyli1125/MCDawn",
                 "duration": "July 2012 – April 2013",
                 "description": 'Developed a Minecraft Classic server that interacted with official game client. Implemented features such as server moderation tools, block history and undo, building tools, inter-server chat and bans, plugin support. Created a website to display list of online servers. Utilized <strong>C#, MySQL, PHP, HTML/CSS, jQuery, Bootstrap</strong>.'
               },
               {
                 "title": "Webmaster",
                 "name": 'University of Toronto Japan Association',
+                "url": "https://utja.sa.utoronto.ca",
                 "duration": "October 2016 – August 2018",
                 "description": "Utilized <strong>Wordpress, HTML/CSS</strong> to manage website for university club. Organized club events such as culture festivals and language exchanges to promote and facilitate culture exchange between Japanese and Canadian students."
               },
               {
                 "title": "Workshops Lead",
                 "name": 'Neurotech UofT',
+                "url": "https://www.neurotechuoft.com",
                 "duration": "September 2017 – April 2018",
                 "description": "University club. Created tutorial workshops for students, such as introduction to programming (<strong>Python</strong>) and introduction to version control (<strong>Git</strong>)."
               }
@@ -167,7 +176,7 @@
           case "experience":
             objectContents += '<div class="sectionObject">' +
                                 '<span>' + object.duration + '</span>' +
-                                '<h4>' + object.title + ' - ' + object.name + '</h4>' +
+                                '<h4>' + object.title + ' - <a href="' + object.url + '" target="_blank">' + object.name + '</a></h4>' +
                                 '<p>' + object.description + '</p>' +
                               '</div>';
             break;
