@@ -55,16 +55,28 @@
     float: right;
     font-size: 12px;
   }
+  .skills ul {
+    padding: 0;
+  }
+  li.sectionObject {
+    display: inline;
+	padding-left: 20px;
+	font-size: 15px;
+	font-weight: bold;
+  }
+  li.sectionObject:first-of-type {
+    padding: 0;
+  }
   </style>
 </head>
 <body class="A4">
   <section class="sheet padding-10mm">
     <div class="profile"></div>
+	<div class="education"></div>
     <div class="employment"></div>
     <div class="projects"></div>
-    <div class="organizations"></div>
-    <div class="education"></div>
-    <div class="certifications"></div>
+    <div class="activities"></div>
+	<div class="skills"></div>
   </section>
   <script type="text/javascript">
   (function() {
@@ -75,6 +87,18 @@
           "description": 'Software Engineer / University of Toronto Computer Science and Linguistics / <a href="mailto:myself@jonny.li">myself@jonny.li</a>'
         },
         "sections": [
+		  {
+            "name": "education",
+            "title": "Education",
+            "objects": [
+              {
+                "school": "University of Toronto",
+                "degree": "Honours Bachelor of Science",
+                "major": "Computer Science and Linguistics",
+                "graduation": "Expected Graduation Jun 2021"
+              }
+            ]
+          },
           {
             "name": "employment",
             "title": "Employment",
@@ -93,7 +117,7 @@
                 "location": "Tokyo, Japan",
                 "url": "https://mitsucari.com",
                 "duration": "Sep 2018 – Aug 2019",
-                "description": 'Developed <a href="https://mitsucari.com" target="_blank">mitsucari</a>, a website for an AI service for companies to determine compatability of employees based on personality tests. Utilized <strong>Ruby on Rails, PostgreSQL, HTML/CSS, jQuery, Bootstrap, SASS</strong>.'
+                "description": 'Developed <a href="https://mitsucari.com" target="_blank">mitsucari</a>, a website for an AI service that determines compatability of company employees based on personality tests. Utilized <strong>Ruby on Rails, PostgreSQL, HTML/CSS, jQuery, Bootstrap, SASS</strong>.'
               }
             ]
           },
@@ -111,20 +135,28 @@
                 "name": "jp-bot",
                 "url": "https://github.com/jonnyli1125/jp-bot",
                 "duration": "Apr 2016 – Dec 2019",
-                "description": 'Developed a <a href="https://discord.gg" target="_blank">Discord</a> chat bot for a Japanese language learning community that I manage, with online dictionary web scrapers and server moderation features. Created a website to display server statistics. Utilized <strong>Python, asyncio, Heroku, MongoDB, Flask</strong>.'
+                "description": 'Developed a <a href="https://discord.gg" target="_blank">Discord</a> chat bot for Japanese language learning, with online dictionary web scrapers and server moderation features. Created a website to display server statistics. Utilized <strong>Python, Heroku, MongoDB</strong>.'
               },
               {
                 "name": "MCDawn",
                 "url": "https://github.com/jonnyli1125/MCDawn",
                 "duration": "Jul 2012 – Apr 2013",
-                "description": 'Developed a Minecraft Classic server that interacted with official game client. Implemented features such as server moderation tools, block history and undo, building tools, inter-server chat and bans, plugin support. Created a website to display list of online servers. Utilized <strong>C#, MySQL, PHP, HTML/CSS, jQuery, Bootstrap</strong>.'
+                "description": 'Developed a custom Minecraft Classic server compatible with official and custom game clients. Implemented server moderation features, block history and undo, building commands, inter-server chat and bans, plugin support. Created website to display list of online servers. Utilized <strong>C#, MySQL, PHP, HTML/CSS, jQuery, Bootstrap</strong>.'
               }
             ]
           },
           {
-            "name": "organizations",
-            "title": "Organizations",
+            "name": "activities",
+            "title": "Activities",
             "objects": [
+			  {
+			    "title": "Foreign Exchange",
+				"name": "USTEP",
+				"location": "University of Tokyo",
+				"url": "https://www.u-tokyo.ac.jp/en/academics/ustep.html",
+				"duration": "Sep 2018 – Aug 2019",
+				"description": "Participated in University-wide Student Exchange Program (USTEP) at University of Tokyo for one year."
+			  },
               {
                 "title": "Webmaster",
                 "name": 'University of Toronto Japan Association',
@@ -144,24 +176,6 @@
             ]
           },
           {
-            "name": "education",
-            "title": "Education",
-            "objects": [
-              {
-                "school": "University of Toronto",
-                "degree": "Honours Bachelor of Science",
-                "major": "Computer Science and Linguistics",
-                "graduation": "Expected graduation in 2021 June"
-              },
-              {
-                "school": "University of Tokyo",
-                "degree": "Foreign exchange",
-                "major": "University-wide Student Exchange Program (USTEP)",
-                "graduation": "September 2018 – August 2019"
-              }
-            ]
-          },
-          {
             "name": "certifications",
             "title": "Certifications",
             "objects": [
@@ -171,7 +185,21 @@
                 "date": "December 2017"
               }
             ]
-          }
+          },
+		  {
+			"name": "skills",
+			"title": "Languages and Technologies",
+			"objects": [
+			  { "name": "Python" },
+			  { "name": "JavaScript" },
+			  { "name": "Ruby on Rails" },
+			  { "name": "PHP" },
+			  { "name": "Java" },
+			  { "name": "C#" },
+			  { "name": "Full Stack Web Development" },
+			  { "name": "SQL" }
+			]
+		  }
         ]
       }
     };
@@ -180,13 +208,19 @@
     document.getElementsByClassName("profile")[0].innerHTML = "<h1>" + profile.name + "</h1>" +
                                                               "<div>" + profile.description + "</div>";
     i18n[language].sections.forEach(function(section, section_index) {
-      var sectionElement = document.getElementsByClassName(section.name)[0];
+	  var sectionElements = document.getElementsByClassName(section.name);
+	  if (!sectionElements.length) return;
+      var sectionElement = sectionElements[0];
       sectionElement.innerHTML = "<h2>" + section.title + "</h2>";
+	  if (section.name == "skills") {
+	    sectionElement.innerHTML += "<ul></ul>";
+	    sectionElement = sectionElement.getElementsByTagName("ul")[0];
+	  }
       section.objects.forEach(function(object, object_index) {
         var objectContents = "";
         switch (section.name) {
           case "employment":
-          case "organizations":
+          case "activities":
             objectContents += '<div class="sectionObject">' +
                                 '<span>' + object.duration + '</span>' +
                                 '<h4>' + object.title + ' - <a href="' + object.url + '" target="_blank">' + object.name + '</a> ' + (object.location ? '<small>@ ' + object.location + '</small>' : '') + '</h4>' +
@@ -202,8 +236,9 @@
             break;
           case "education":
             objectContents += '<div class="sectionObject">' +
+								'<span>' + object.graduation + '</span>' +
                                 '<h4>' + object.school + '</h4>' +
-                                '<p>' + object.degree + ', ' + object.major + '. ' + object.graduation + '.</p>' +
+                                '<p>' + object.degree + ', ' + object.major + '.</p>' +
                               '</div>';
             break;
           case "certifications":
@@ -212,6 +247,9 @@
                                 '<h4>' + object.organization + ' - ' + object.name + '</h4>' +
                               '</div>';
             break;
+		  case "skills":
+			objectContents += '<li class="sectionObject">' + object.name + '</li>';
+			break;
         }
         sectionElement.innerHTML += objectContents;
       });
