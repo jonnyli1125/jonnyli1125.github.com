@@ -26,13 +26,13 @@
     text-decoration: none;
   }
   .profile {
-    margin-bottom: 15px;
+    margin-bottom: 14px;
   }
   .sectionObject {
-    margin-bottom: 12px;
+    margin-bottom: 10px;
   }
   .sectionObject:last-child {
-    margin-bottom: 15px;
+    margin-bottom: 12px !important;
   }
   .sectionObject h4 {
     font-size: 14.5px;
@@ -57,8 +57,8 @@
     float: right;
     font-size: 12px;
   }
-  .skills ul {
-    padding: 0;
+  .skills .sectionObject {
+    margin-bottom: 6px;
   }
   li.sectionObject {
 	font-size: 15px;
@@ -73,7 +73,6 @@
 	<div class="skills"></div>
     <div class="employment"></div>
     <div class="projects"></div>
-    <div class="activities"></div>
   </section>
   <script type="text/javascript">
   (function() {
@@ -91,9 +90,10 @@
               {
                 "school": "University of Toronto",
                 "degree": "Honours Bachelor of Science",
-				"courses": "Data Structures, Algorithms, Operating Systems, Computational Linguistics, NLP, Machine Learning",
+				"courses": "Data Structures, Algorithms, Operating Systems, Machine Learning, AI, Computational Linguistics, NLP",
+				"activities": "<br>- Foreign Exchange (2018-2019): Studied Computer Science and Linguistics at University of Tokyo.<br>- UofT Neurotech Workshops Lead (2017-2018): Created tutorial workshops for programming basics (i.e. Python, Git, etc).<br>- UofT Japan Assocation Webmaster (2017-2018): Designed and managed club website with HTML/CSS/JavaScript.",
                 "major": "Computer Science and Linguistics",
-                "graduation": "Expected Graduation Jun 2021"
+                "graduation": "Graduated Jun 2021"
               }
             ]
           },
@@ -107,15 +107,15 @@
                 "location": "VirtualLocation",
                 "url": "https://amazon.com",
                 "duration": "Jun 2020 - Sep 2020",
-                "description": '- Developed Search Engine Configuration Dependency Analyzer, an internal Python tool to return the dependency chain of any given search engine configuration metadata object.<br>- Implemented DFS with memoization techniques on dense dependency graph of 20,000+ metadata objects and millions of dependencies.<br>- Conducted manual analysis on metadata to determine relevant dependencies of each object.<br>- Devised efficient methods to store large program output as JSON objects in Amazon S3.<br>- Contributed to ongoing effort to clean up unused configuration metadata with analysis results from tool.'
+                "description": '- Developed "Search Engine Configuration Dependency Analyzer", a command-line tool to get dependency chains of configuration objects.<br>- Implemented DFS with memoization on dense dependency graph of 20,000+ metadata objects and millions of dependencies in Python.<br>- Conducted analysis on search engine configuration metadata to determine relevant dependency relations of objects.<br>- Devised efficient methods using data structures to store large output in Amazon S3.<br>- Contributed to ongoing effort to clean up unused configuration metadata with analysis results from tool.'
               },
               {
                 "title": "Software Intern",
                 "name": "Mitsucari",
                 "location": "Tokyo, Japan",
                 "url": "https://mitsucari.com",
-                "duration": "Sep 2018 – Aug 2019",
-                "description": '- Participated in agile development team to deliver <a href="https://mitsucari.com" target="_blank">mitsucari</a>, a startup web service to analyze compatibility of current/prospect employees within a company using personality tests.<br>- Implemented model/view/controller components of website with Ruby on Rails, PostgreSQL, jQuery, Bootstrap, SASS.<br>- Wrote design documents for features such as site-wide messaging system and implemented them.'
+                "duration": "Sep 2018 - Aug 2019",
+                "description": '- Participated in agile development team to deliver <a href="https://mitsucari.com" target="_blank">mitsucari</a>, a web service to analyze compatibility of current/prospect employees within a company using personality tests.<br>- Implemented model/view/controller components of website with Ruby on Rails, PostgreSQL, jQuery, Bootstrap, SASS.<br>- Wrote design documents for features such as site-wide messaging system and implemented them.'
               }
             ]
           },
@@ -123,18 +123,23 @@
             "name": "projects",
             "title": "Projects",
             "objects": [
-              {
-                "name": "jp-bot",
-                "url": "https://github.com/jonnyli1125/jp-bot",
-                "duration": "Apr 2016 – Dec 2019",
-                "description": '- Created and developed a <a href="https://discord.gg" target="_blank">Discord</a> chat bot written in Python and deployed on Heroku, for Japanese language learning.<br>- Implemented web scrapers for online dictionaries using HTML parsing libraries such as lxml.<br>- Implemented server moderation features to keep track of punished/banned users utilizing MongoDB.<br>- Created a website to display server statistics using data from MongoDB and front/back end in PHP/JavaScript.'
+			  {
+                "name": 'Grammatical Error Correction for Japanese',
+                "url": "https://github.com/jonnyli1125/gector-ja",
+                "duration": "Apr 2021 - Jun 2021",
+                "description": '- Implemented grammatical error correction model desribed in the paper <a href="https://arxiv.org/abs/2005.12592">"GECToR -- Grammatical Error Correction: Tag, Not Rewrite" (Omelianchuk et al. 2020)</a> for Japanese in Python.<br>- Implemented a token-level sequence classification neural network for iterative sequence tagging, using pretrained transformer models and Keras/Tensorflow 2.<br>- Generated synthetic error dataset from Wikipedia dump for pre-training and fine-tuned on NAIST Lang8 Learner Corpora.<br>- Analyzed optimal model/training hyperparameters and conducted training with Colab TPUs.<br>- Created interactive web demo to get grammatical error correction on user input, using Python/JavaScript.'
               },
-              {
-                "name": "uoft-scheduler",
-				"location": "Hack the North 2016",
-                "url": "https://github.com/jonnyli1125/uoft-scheduler",
-                "duration": "Sep 2016",
-                "description": '- Created a scheduling dashboard web app for University of Toronto students at Hack the North 2016.<br>- Designed and implemented front end interface with Bootstrap and jQuery.<br>- Implemented back end with node.js using data from Google Maps API and web-scraped data from UofT website.'
+			  {
+                "name": "Shift-Reduce Dependency Parser for Japanese",
+                "url": "https://github.com/jonnyli1125/jp-srparser",
+                "duration": "Apr 2021",
+                "description": '- Implemented a shift-reduce dependency parser using arc-standard transition system in Python.<br>- Implemented a feed-forward neural network with PyTorch to predict the next parser action given a parser state.<br>- Trained model on <a href="https://universaldependencies.org/treebanks/ja_gsd/index.html">UD Japanese GSD</a> treebank and with pretrained word embedding weights from <a href="https://wikipedia2vec.github.io/wikipedia2vec/pretrained/">Wikipedia2vec</a>.<br>- Implemented a Colab notebook with interactive visual example of dependency parsing using the model.'
+              },
+			  {
+                "name": "Language Learning Discord Bot",
+                "url": "https://github.com/jonnyli1125/jp-bot",
+                "duration": "Dec 2019",
+                "description": '- Developed a <a href="https://discord.gg" target="_blank">Discord</a> chat bot for Japanese language learning, written in Python and deployed on Heroku.<br>- Implemented dictionary/translation commands by interacting with RESTful APIs and scraping online dictionary websites using HTML parsers.<br>- Implemented server moderation features to keep track of punished/banned users with MongoDB.<br>- Created a website to display Discord server statistics with PHP/JavaScript.'
               }
             ]
           },
@@ -149,23 +154,7 @@
 				"url": "https://www.u-tokyo.ac.jp/en/academics/ustep.html",
 				"duration": "Sep 2018 – Aug 2019",
 				"description": "- Participated in University-wide Student Exchange Program (USTEP) at University of Tokyo for one year."
-			  },
-              {
-                "title": "Webmaster",
-                "name": 'University of Toronto Japan Association',
-                "location": "University of Toronto",
-                "url": "https://utja.sa.utoronto.ca",
-                "duration": "Oct 2016 – Aug 2018",
-                "description": "- Utilized Wordpress, JavaScript to manage website.<br>- Organized culture festivals and language exchanges to promote exchange between Japanese and Canadian students."
-              },
-              {
-                "title": "Workshops Lead",
-                "name": 'Neurotech UofT',
-                "location": "University of Toronto",
-                "url": "https://www.neurotechuoft.com",
-                "duration": "Sep 2017 – Apr 2018",
-                "description": "- Created beginner-oriented tutorial workshops such as intro to programming (Python) and version control (Git)."
-              }
+			  }
             ]
           },
           {
@@ -183,7 +172,7 @@
 			"name": "skills",
 			"title": "Skills",
 			"objects": [
-			  { "name": "Programming Languages", "description": "Python, JavaScript, Java, C#, Ruby, PHP" },
+			  { "name": "Programming Languages", "description": "Python, JavaScript, Ruby, Java, C#" },
 			  { "name": "Technologies/Frameworks", "description": "Git, SQL databases, MongoDB, NodeJS, Ruby on Rails, Bootstrap, jQuery, SASS, Heroku" },
 			  { "name": "Other", "description": "Agile methodologies, Test suite frameworks, CI/CD tools" }
 			]
@@ -223,7 +212,8 @@
 								'<span>' + object.graduation + '</span>' +
                                 '<h4>' + object.school + '</h4>' +
                                 '<p><strong>' + object.degree + ', ' + object.major + '</strong></p>' +
-								'<p>Relevant courses: ' + object.courses + '</p>'
+								'<p>Courses: ' + object.courses + '</p>' + 
+								'<p>Activities: ' + object.activities + '</p>' +
                               '</div>';
             break;
           case "certifications":
