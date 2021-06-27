@@ -9,6 +9,7 @@
   @page { size: A4 }
   body {
     font-family: 'Segoe UI', 'Meiryo UI', sans-serif;
+	-webkit-print-color-adjust: exact !important;
   }
   h1 {
     font-weight: 500;
@@ -94,7 +95,7 @@
               {
                 "school": "University of Toronto",
                 "degree": "Honours Bachelor of Science",
-				"courses": "Data Structures, Algorithms, Operating Systems, Machine Learning, AI, Computational Linguistics, NLP",
+				"courses": "Machine Learning, AI, Computational Linguistics, NLP, Data Structures, Algorithms, Operating Systems",
 				"activities": "<br>- Foreign Exchange (2018-2019): Studied Computer Science and Linguistics at University of Tokyo.<br>- UofT Neurotech Workshops Lead (2017-2018): Created tutorial workshops for programming basics (i.e. Python, Git, etc).<br>- UofT Japan Assocation Webmaster (2017-2018): Designed and managed club website with HTML/CSS/JavaScript.",
                 "major": "Computer Science and Linguistics",
                 "graduation": "Graduated Jun 2021"
@@ -134,7 +135,7 @@
                 "description": '- Developed AlphaZero-style chess AI model in PyTorch by combining BERT with policy/value network heads.<br>- Implemented Monte Carlo Tree Search agent and universal chess engine interface protocol (UCI) in Python.<br>- Implemented data modules for pre-training BERT for masked language modeling on chess game states.<br>- Implemented data preprocessing/training pipelines for supervised learning of policy/value networks on <a href="http://www.computerchess.org.uk/ccrl/">CCRL computer chess games dataset</a> using HDF5 dataset format, PyTorch, and GCP/Colab.<br></a>'
               },
 			  {
-                "name": 'BERT-based Grammatical Error Correction Model',
+                "name": 'BERT-based Grammatical Error Correction',
                 "url": "https://github.com/jonnyli1125/gector-ja",
                 "duration": "Apr 2021 - Jun 2021",
                 "description": '- Implemented grammatical error correction model for Japanese, described in the Grammarly research paper <a href="https://arxiv.org/abs/2005.12592">"GECToR -- Grammatical Error Correction: Tag, Not Rewrite" (Omelianchuk et al. 2020)</a>.<br>- Implemented token classification neural network for predicting token-level edit transformations, using pretrained BERT model from Huggingface library and Keras/Tensorflow 2.<br>- Implemented data preprocessing/training pipelines for synthetic error corpus generation + token label computation on Wikipedia dump and <a href="https://sites.google.com/site/naistlang8corpora/">NAIST Lang8 Learner Corpora</a>, using TFRecords dataset format, Tensorflow, and GCP/Colab.<br>- Utilized linguistic domain knowledge to optimize synthetic error corpus generation for improved model training.'
@@ -149,7 +150,7 @@
                 "name": "Language Learning Discord Bot",
                 "url": "https://github.com/jonnyli1125/jp-bot",
                 "duration": "Dec 2019",
-                "description": '- Developed <a href="https://discord.gg" target="_blank">Discord</a> chat bot for Japanese language learning, written in Python and deployed on Heroku.<br>- Implemented dictionary/translation commands by interacting with RESTful APIs and scraping online dictionary websites using HTML parsers and regular expressions.<br>- Implemented server moderation features to keep track of punished/banned users by integrating user data with MongoDB.'
+                "description": '- Developed <a href="https://discord.gg" target="_blank">Discord</a> chat bot for Japanese language learning, written in Python and deployed on Heroku.<br>- Implemented dictionary lookup/translation commands by interacting with RESTful APIs and scraping online dictionary websites using HTML parsers and regular expressions.<br>- Implemented server moderation features to keep track of punished/banned users by integrating user data with MongoDB.'
               }
             ]
           },
@@ -183,8 +184,8 @@
 			"title": "Skills",
 			"objects": [
 			  { "name": "Programming Languages", "description": "Python, JavaScript, Ruby, Java, C#" },
-			  { "name": "Technologies/Frameworks", "description": "Git, SQL, MongoDB, Ruby on Rails, Bootstrap, jQuery, PyTorch, Keras/Tensorflow 2, scikit-learn" },
-			  { "name": "Other", "description": "Agile methodologies, Test suite frameworks, CI/CD tools" }
+			  { "name": "Technologies/Frameworks", "description": "PyTorch, Keras/Tensorflow 2, scikit-learn, Git, SQL, MongoDB, Ruby on Rails, Bootstrap, jQuery" },
+			  { "name": "Other", "description": "Machine learning, Neural networks, NLP, Agile methodologies, Test suite frameworks, CI/CD tools" }
 			]
 		  }
         ]
@@ -213,7 +214,7 @@
           case "projects":
             objectContents += '<div class="sectionObject">' +
                                 '<span>' + object.duration + '</span>' +
-                                '<h4><a' + (object.url ? ' href="' + object.url + '" target="_blank"' : '') + '>' + object.name + '</a> ' + (object.location ? '<small>@ ' + object.location + '</small>' : '') + '</h4>' +
+                                '<h4><a' + (object.url ? ' href="' + object.url + '" target="_blank"' : '') + '>' + object.name + '</a> ' + (object.url ? '<small>@ <a href="' + object.url + '">' + object.url.replace(/https?:\/\//, '') + '</a></small>' : '') + '</h4>' +
                                 '<p>' + object.description + '</p>' +
                               '</div>';
             break;
