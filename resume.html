@@ -17,10 +17,10 @@
   }
   h2 {
     border-bottom: 1px solid #b9b9b9;
-	font-size: 1.25em;
+	font-size: 17px;
     font-weight: normal;
-    margin: 0 0 10px;
-    padding-bottom: 10px;
+    margin: 0 0 8px;
+    padding-bottom: 8px;
   }
   a, a:hover, a:visited {
     color: #0067b8;
@@ -34,10 +34,10 @@
 	margin-right: -5px;
   }
   .sectionObject {
-    margin-bottom: 10px;
+    margin-bottom: 8px;
   }
   .sectionObject:last-child {
-    margin-bottom: 10px !important;
+    margin-bottom: 12px !important;
   }
   .sectionObject h4 {
     font-size: 14.5px;
@@ -48,8 +48,8 @@
     color: inherit;
   }
   .sectionObject h4 small {
-  color: #888;
-  font-weight: normal;
+    color: #888;
+    font-weight: normal;
   }
   .sectionObject p {
     color: #222;
@@ -60,7 +60,8 @@
   .sectionObject span {
     color: #666;
     float: right;
-    font-size: 12px;
+    font-size: 11px;
+	line-height: 16px;
   }
   .skills .sectionObject {
     margin-bottom: 6px;
@@ -132,13 +133,13 @@
                 "name": "BERT+MCTS-based Chess AI",
                 "url": "https://github.com/jonnyli1125/chess-bert-mcts",
                 "duration": "Jun 2021",
-                "description": '- Developed AlphaZero-style chess AI model in PyTorch by combining BERT with policy/value network heads.<br>- Implemented Monte Carlo Tree Search agent and universal chess engine interface protocol (UCI) in Python.<br>- Implemented data modules for pre-training BERT for masked language modeling on chess game states.<br>- Implemented data preprocessing/training pipelines for supervised learning of policy/value networks on <a href="http://www.computerchess.org.uk/ccrl/">CCRL computer chess games dataset</a> using HDF5 dataset format, PyTorch, and GCP/Colab.<br></a>'
+                "description": '- Developed AlphaZero-style chess AI model in PyTorch by combining BERT with policy/value network heads.<br>- Implemented Monte Carlo Tree Search agent and universal chess engine interface protocol (UCI) in Python.<br>- Implemented data modules for pre-training BERT for masked language modeling on chess game states.<br>- Implemented data preprocessing/training pipelines for supervised learning of policy/value networks on <a href="http://www.computerchess.org.uk/ccrl/">CCRL computer chess games dataset</a> using HDF5 dataset format, PyTorch, and GCP/Colab.<br>- Integrated bot with online chess server <a href="https://lichess.org">lichess.org</a> for live online play, using Python and Lichess Bot API.</a>'
               },
 			  {
                 "name": 'BERT-based Grammatical Error Correction',
                 "url": "https://github.com/jonnyli1125/gector-ja",
                 "duration": "Apr 2021 - Jun 2021",
-                "description": '- Implemented grammatical error correction model for Japanese, described in the Grammarly research paper <a href="https://arxiv.org/abs/2005.12592">"GECToR -- Grammatical Error Correction: Tag, Not Rewrite" (Omelianchuk et al. 2020)</a>.<br>- Implemented token classification neural network for predicting token-level edit transformations, using pretrained BERT model from Huggingface library and Keras/Tensorflow 2.<br>- Implemented data preprocessing/training pipelines for synthetic error corpus generation + token label computation on Wikipedia dump and <a href="https://sites.google.com/site/naistlang8corpora/">NAIST Lang8 Learner Corpora</a>, using TFRecords dataset format, Tensorflow, and GCP/Colab.<br>- Utilized linguistic domain knowledge to optimize synthetic error corpus generation for improved model training.'
+                "description": '- Implemented grammatical error correction model for Japanese, described in the Grammarly research paper <a href="https://arxiv.org/abs/2005.12592">"GECToR -- Grammatical Error Correction: Tag, Not Rewrite" (Omelianchuk et al. 2020)</a>.<br>- Implemented token classification neural network for predicting token-level edit transformations, using pretrained BERT model from Huggingface library and Keras/Tensorflow 2.<br>- Implemented data preprocessing/training pipelines for synthetic error corpus generation + token label computation on Wikipedia dump and <a href="https://sites.google.com/site/naistlang8corpora/">NAIST Lang8 Learner Corpora</a>, using TFRecords dataset format, Tensorflow, and GCP/Colab.<br>- Utilized linguistic domain knowledge to optimize synthetic error corpus generation for improved model training.<br>- Created interactive web demo app to get grammatical error correction on user input, using Flask and HTML/CSS/JavaScript.'
               },
 			  {
                 "name": "Shift-Reduce Dependency Parser",
@@ -183,8 +184,8 @@
 			"name": "skills",
 			"title": "Skills",
 			"objects": [
-			  { "name": "Programming Languages", "description": "Python, JavaScript, Ruby, Java, C#" },
-			  { "name": "Technologies/Frameworks", "description": "PyTorch, Keras/Tensorflow 2, scikit-learn, Git, SQL, MongoDB, Ruby on Rails, Bootstrap, jQuery" },
+			  { "name": "Programming Languages", "description": "Python, JavaScript, Java, C#, Ruby" },
+			  { "name": "Technologies/Frameworks", "description": "PyTorch, Keras/Tensorflow 2, scikit-learn, Colab/Jupyter Notebooks, Git, SQL, Ruby on Rails" },
 			  { "name": "Other", "description": "Machine learning, Neural networks, NLP, Agile methodologies, Test suite frameworks, CI/CD tools" }
 			]
 		  }
