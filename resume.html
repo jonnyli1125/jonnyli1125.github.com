@@ -9,7 +9,7 @@
   @page { size: A4 }
   body {
     font-family: 'Segoe UI', 'Meiryo UI', sans-serif;
-	-webkit-print-color-adjust: exact !important;
+    -webkit-print-color-adjust: exact !important;
   }
   h1 {
     font-weight: 500;
@@ -17,7 +17,7 @@
   }
   h2 {
     border-bottom: 1px solid #b9b9b9;
-	font-size: 17px;
+    font-size: 18px;
     font-weight: normal;
     margin: 0 0 8px;
     padding-bottom: 8px;
@@ -30,14 +30,14 @@
     margin-bottom: 14px;
   }
   .profile .description {
-	font-size: 15px;
-	margin-right: -5px;
+    font-size: 15px;
+    line-height: 22px;
   }
   .sectionObject {
-    margin-bottom: 8px;
+    margin-bottom: 10px;
   }
   .sectionObject:last-child {
-    margin-bottom: 12px !important;
+    margin-bottom: 16px !important;
   }
   .sectionObject h4 {
     font-size: 14.5px;
@@ -54,29 +54,29 @@
   .sectionObject p {
     color: #222;
     font-size: 13px;
-	line-height: 16px;
+    line-height: 16px;
     margin: 0;
   }
   .sectionObject span {
     color: #666;
     float: right;
     font-size: 12px;
-	line-height: 14px;
+    line-height: 14px;
   }
   .skills .sectionObject {
     margin-bottom: 6px;
   }
   li.sectionObject {
-	font-size: 15px;
-	font-weight: bold;
+    font-size: 15px;
+    font-weight: bold;
   }
   </style>
 </head>
 <body class="A4">
   <section class="sheet padding-10mm">
     <div class="profile"></div>
-	<div class="education"></div>
-	<div class="skills"></div>
+    <div class="education"></div>
+    <div class="skills"></div>
     <div class="employment"></div>
     <div class="projects"></div>
   </section>
@@ -86,18 +86,18 @@
       "en": {
         "profile": {
           "name": "Jonny Li",
-          "description": 'ML/Software Engineer / <a href="https://jonny.li">https://jonny.li</a> / <a href="jonny.li@mail.utoronto.ca">jonny.li@mail.utoronto.ca</a> / Github: <a href="https://github.com/jonnyli1125">@jonnyli1125</a> / LinkedIn: <a href="https://www.linkedin.com/in/jonnylii/">jonnylii</a>'
+          "description": 'ML/Software Engineer, Focus in Natural Language Processing<br>Website: <a href="https://jonny.li">https://jonny.li</a> / Email: <a href="jonny.li@mail.utoronto.ca">jonny.li@mail.utoronto.ca</a> / Github: <a href="https://github.com/jonnyli1125">@jonnyli1125</a> / LinkedIn: <a href="https://www.linkedin.com/in/jonnylii/">jonnylii</a>'
         },
         "sections": [
-		  {
+          {
             "name": "education",
             "title": "Education",
             "objects": [
               {
                 "school": "University of Toronto",
                 "degree": "Honours Bachelor of Science",
-				"courses": "Machine Learning, AI, Computational Linguistics, NLP, Data Structures, Algorithms, Operating Systems",
-				"activities": "<br>- Foreign Exchange (2018-2019): Studied Computer Science and Linguistics at University of Tokyo.<br>- UofT Neurotech Workshops Lead (2017-2018): Created tutorial workshops for programming basics (i.e. Python, Git, etc).<br>- UofT Japan Assocation Webmaster (2017-2018): Designed and managed club website with HTML/CSS/JavaScript.",
+                "courses": "Machine Learning, AI, Computational Linguistics, NLP, Data Structures, Algorithms, Operating Systems",
+                "activities": "<br>- Foreign Exchange (2018-2019): Studied Computer Science and Linguistics at University of Tokyo.<br>- UofT Neurotech Workshops Lead (2017-2018): Created tutorial workshops for programming basics (i.e. Python, Git, etc).<br>- UofT Japan Assocation Webmaster (2017-2018): Designed and managed club website with HTML/CSS/JavaScript.",
                 "major": "Computer Science and Linguistics",
                 "graduation": "Graduated Jun 2021"
               }
@@ -108,12 +108,20 @@
             "title": "Employment",
             "objects": [
               {
-                "title": "SDE Intern",
+                "title": "Software Engineer, Language Modeling",
+                "name": "SoundHound AI",
+                "location": "Toronto, Canada",
+                "url": "https://soundhound.com",
+                "duration": "Oct 2021 - Present",
+                "description": '- Implemented and trained statistical/neural language models used in automatic speech recognition (ASR) pipeline.<br>- Optimized Hebrew ASR performance by 10% on key performance indicator benchmark through LM experiments.<br>- Streamlined internal development process through implementing/managing data collection, analysis, and build scripts.'
+              },
+              {
+                "title": "SDE Intern, Search",
                 "name": "Amazon",
                 "location": "VirtualLocation",
                 "url": "https://amazon.com",
                 "duration": "Jun 2020 - Sep 2020",
-                "description": '- Developed command-line tools for dependency chain analysis of search engine configuration metadata.<br>- Implemented DFS-like graph search with memoization optimizations on dense dependency graph in Python.<br>- Conducted analysis on real configuration metadata to determine relevant dependency relations of configuration objects.<br>- Devised efficient methods to store large output in Amazon S3 using data structures and compression algorithms.'
+                "description": '- Optimized search engine efficiency and reduced engineering debt by implementing a dependency graph analyzer in Python to safely remove redundant search engine configuration objects.<br>- Implemented interfaces and pipelines for transferring data between AWS components.<br>- Devised efficient methods to compress large data using data structures and compression algorithms.'
               },
               {
                 "title": "Software Intern",
@@ -129,29 +137,23 @@
             "name": "projects",
             "title": "Projects",
             "objects": [
-			  {
-                "name": "BERT+MCTS-based Chess AI",
-                "url": "https://github.com/jonnyli1125/chess-bert-mcts",
-                "duration": "Jun 2021",
-                "description": '- Developed AlphaZero-style chess AI model in PyTorch by combining BERT with policy/value network heads.<br>- Implemented Monte Carlo Tree Search agent in Python with GPU parallelization using "virtual losses".<br>- Implemented data modules for pre-training BERT for masked language modeling on chess game states.<br>- Implemented data preprocessing/training pipelines for supervised learning of policy/value networks on <a href="http://www.computerchess.org.uk/ccrl/">CCRL computer chess games dataset</a> using HDF5 dataset format, PyTorch, and GCP/Colab.<br>- Integrated bot with online chess server <a href="https://lichess.org">lichess.org</a> for live online play, using Python and Lichess Bot API.</a>'
+              {
+                "name": "Webspeak Statistical Machine Translation",
+                "url": "https://github.com/jonnyli1125/piemanese-translator",
+                "duration": "Feb 2022",
+                "description": '- Implemented statistical machine translation model for translating webspeak to English using Python and NLTK.<br>- Formulated problem as SMT task and defined model components by Bayes theorem.<br>- Trained n-gram statistical language models on web chat corpus to predict corrected English words from context.<br>- Innovated solution for translation model due to lack of labelled training data, using lingustic domain knowledge.<br>- Implemented Discord chat bot interface using Discord API and Python, and deployed to cloud with Heroku.'
               },
-			  {
+              {
                 "name": 'BERT-based Grammatical Error Correction',
                 "url": "https://github.com/jonnyli1125/gector-ja",
                 "duration": "Apr 2021 - Jun 2021",
-                "description": '- Implemented grammatical error correction model for Japanese, described in the Grammarly research paper <a href="https://arxiv.org/abs/2005.12592">"GECToR -- Grammatical Error Correction: Tag, Not Rewrite" (Omelianchuk et al. 2020)</a>.<br>- Implemented token classification neural network for predicting token-level edit transformations, using pretrained BERT model from Huggingface library and Keras/Tensorflow 2.<br>- Implemented data preprocessing/training pipelines for synthetic error corpus generation + token label computation on Wikipedia dump and <a href="https://sites.google.com/site/naistlang8corpora/">NAIST Lang8 Learner Corpora</a>, using TFRecords dataset format, Tensorflow, and GCP/Colab.<br>- Utilized linguistic domain knowledge to optimize synthetic error corpus generation for improved model training.<br>- Created interactive web demo app to get grammatical error correction on user input, using Flask and HTML/CSS/JavaScript.'
+                "description": '- Implemented grammatical error correction model for Japanese, as described in a <a href="https://arxiv.org/abs/2005.12592">2020 Grammarly research paper</a>.<br>- Achieved state of the art result with 10% relative performance increase on benchmark corpus for Japanese GEC.<br>- Implemented neural network for predicting token-level edit transformations, using pretrained BERT model from Huggingface library and Keras/Tensorflow 2.<br>- Implemented data processing pipelines for parallel corpus generation on Wikipedia dump and <a href="https://sites.google.com/site/naistlang8corpora/">Lang8 Parallel Corpus</a>, and training pipelines with Tensorflow and GCP/Colab.<br>- Created interactive web app demo using Python/Flask and HTML/CSS/JavaScript.'
               },
-			  {
-                "name": "Shift-Reduce Dependency Parser",
+              {
+                "name": "Neural Shift-Reduce Dependency Parser",
                 "url": "https://github.com/jonnyli1125/jp-srparser",
                 "duration": "Apr 2021",
-                "description": '- Implemented shift-reduce dependency parser for Japanese, with a feed-forward neural network to predict the next parser action given a parser state, using PyTorch and pretrained word embedding layer from <a href="https://wikipedia2vec.github.io/wikipedia2vec/pretrained/">Wikipedia2vec</a>.<br>- Implemented data preprocessing/training pipelines for <a href="https://universaldependencies.org/treebanks/ja_gsd/index.html">UD Japanese GSD treebank corpus</a> in PyTorch.<br>- Implemented dependency tree visualization on interactive user input using spaCy and Colab.'
-              },
-			  {
-                "name": "Language Learning Discord Bot",
-                "url": "https://github.com/jonnyli1125/jp-bot",
-                "duration": "Dec 2019",
-                "description": '- Developed <a href="https://discord.gg" target="_blank">Discord</a> chat bot for Japanese language learning, written in Python and deployed on Heroku.<br>- Implemented dictionary lookup/translation commands by interacting with RESTful APIs and scraping online dictionary websites using HTML parsers and regular expressions.<br>- Implemented server moderation features to keep track of punished/banned users by integrating user data with MongoDB.'
+                "description": '- Implemented shift-reduce dependency parser for Japanese with a feed-forward neural network to predict parser actions.<br>- Implemented model training and data processing pipelines for <a href="https://universaldependencies.org/treebanks/ja_gsd/index.html">UD Japanese GSD treebank corpus</a> in PyTorch.<br>- Implemented dependency tree visualization on interactive user input using spaCy and Colab.'
               }
             ]
           },
@@ -159,14 +161,14 @@
             "name": "activities",
             "title": "Activities",
             "objects": [
-			  {
-			    "title": "Foreign Exchange",
-				"name": "University of Tokyo",
-				"location": "Tokyo, Japan",
-				"url": "https://www.u-tokyo.ac.jp/en/academics/ustep.html",
-				"duration": "Sep 2018 – Aug 2019",
-				"description": "- Participated in University-wide Student Exchange Program (USTEP) at University of Tokyo for one year."
-			  }
+              {
+                "title": "Foreign Exchange",
+                "name": "University of Tokyo",
+                "location": "Tokyo, Japan",
+                "url": "https://www.u-tokyo.ac.jp/en/academics/ustep.html",
+                "duration": "Sep 2018 – Aug 2019",
+                "description": "- Participated in University-wide Student Exchange Program (USTEP) at University of Tokyo for one year."
+              }
             ]
           },
           {
@@ -180,25 +182,25 @@
               }
             ]
           },
-		  {
-			"name": "skills",
-			"title": "Skills",
-			"objects": [
-			  { "name": "Programming Languages", "description": "Python, JavaScript, Java, C#, Ruby" },
-			  { "name": "Technologies/Frameworks", "description": "PyTorch, Keras/Tensorflow 2, scikit-learn, Colab/Jupyter Notebooks, Git, SQL, Ruby on Rails" },
-			  { "name": "Other", "description": "Machine learning, Neural networks, NLP, Agile methodologies, Test suite frameworks, CI/CD tools" }
-			]
-		  }
+          {
+            "name": "skills",
+            "title": "Skills",
+            "objects": [
+              { "name": "Programming Languages", "description": "Python, JavaScript, Java, Perl" },
+              { "name": "Technologies/Frameworks", "description": "PyTorch, Keras/Tensorflow 2, scikit-learn, Colab/Jupyter, Git, SQL" },
+              { "name": "Other", "description": "NLP, AI, Machine learning, Neural networks, Agile methodologies, Test suite frameworks, CI/CD tools" }
+            ]
+          }
         ]
       }
     };
     var language = "en";
     var profile = i18n[language].profile;
     document.getElementsByClassName("profile")[0].innerHTML = "<h1>" + profile.name + "</h1>" +
-                                                              "<div class='description'>" + profile.description + "</div>";
+    "<div class='description'>" + profile.description + "</div>";
     i18n[language].sections.forEach(function(section, section_index) {
-	  var sectionElements = document.getElementsByClassName(section.name);
-	  if (!sectionElements.length) return;
+      var sectionElements = document.getElementsByClassName(section.name);
+      if (!sectionElements.length) return;
       var sectionElement = sectionElements[0];
       sectionElement.innerHTML = "<h2>" + section.title + "</h2>";
       section.objects.forEach(function(object, object_index) {
@@ -206,44 +208,44 @@
         switch (section.name) {
           case "employment":
           case "activities":
-            objectContents += '<div class="sectionObject">' +
-                                '<span>' + object.duration + '</span>' +
-                                '<h4>' + object.title + ' - <a href="' + object.url + '" target="_blank">' + object.name + '</a> ' + (object.location ? '<small>@ ' + object.location + '</small>' : '') + '</h4>' +
-                                '<p>' + object.description + '</p>' +
-                              '</div>';
-            break;
+          objectContents += '<div class="sectionObject">' +
+          '<span>' + object.duration + '</span>' +
+          '<h4>' + object.title + ' - <a href="' + object.url + '" target="_blank">' + object.name + '</a> ' + (object.location ? '<small>@ ' + object.location + '</small>' : '') + '</h4>' +
+          '<p>' + object.description + '</p>' +
+          '</div>';
+          break;
           case "projects":
-            objectContents += '<div class="sectionObject">' +
-                                '<span>' + object.duration + '</span>' +
-                                '<h4><a' + (object.url ? ' href="' + object.url + '" target="_blank"' : '') + '>' + object.name + '</a> ' + (object.url ? '<small>@ <a href="' + object.url + '">' + object.url.replace(/https?:\/\//, '') + '</a></small>' : '') + '</h4>' +
-                                '<p>' + object.description + '</p>' +
-                              '</div>';
+          objectContents += '<div class="sectionObject">' +
+          '<span>' + object.duration + '</span>' +
+          '<h4><a' + (object.url ? ' href="' + object.url + '" target="_blank"' : '') + '>' + object.name + '</a> ' + (object.url ? '<small>@ <a href="' + object.url + '">' + object.url.replace(/https?:\/\//, '') + '</a></small>' : '') + '</h4>' +
+            '<p>' + object.description + '</p>' +
+            '</div>';
             break;
-          case "education":
+            case "education":
             objectContents += '<div class="sectionObject">' +
-								'<span>' + object.graduation + '</span>' +
-                                '<h4>' + object.school + '</h4>' +
-                                '<p><strong>' + object.degree + ', ' + object.major + '</strong></p>' +
-								'<p>Courses: ' + object.courses + '</p>' + 
-								'<p>Activities: ' + object.activities + '</p>' +
-                              '</div>';
+            '<span>' + object.graduation + '</span>' +
+            '<h4>' + object.school + '</h4>' +
+            '<p><strong>' + object.degree + ', ' + object.major + '</strong></p>' +
+            '<p>Courses: ' + object.courses + '</p>' +
+            '<p>Activities: ' + object.activities + '</p>' +
+            '</div>';
             break;
-          case "certifications":
+            case "certifications":
             objectContents += '<div class="sectionObject">' +
-                                '<span>' + object.date + '</span>' +
-                                '<h4>' + object.organization + ' - ' + object.name + '</h4>' +
-                              '</div>';
+            '<span>' + object.date + '</span>' +
+            '<h4>' + object.organization + ' - ' + object.name + '</h4>' +
+            '</div>';
             break;
-		  case "skills":
-			objectContents += '<div class="sectionObject">' + 
-							    '<p><strong>' + object.name + '</strong>: ' + object.description + '</p>' + 
-							  '</div>';
-			break;
-        }
-        sectionElement.innerHTML += objectContents;
+            case "skills":
+            objectContents += '<div class="sectionObject">' +
+            '<p><strong>' + object.name + '</strong>: ' + object.description + '</p>' +
+            '</div>';
+            break;
+          }
+          sectionElement.innerHTML += objectContents;
+        });
       });
-    });
-  })();
-  </script>
-</body>
-</html>
+    })();
+    </script>
+  </body>
+  </html>
