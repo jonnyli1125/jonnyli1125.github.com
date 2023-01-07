@@ -27,7 +27,7 @@
     text-decoration: none;
   }
   .profile {
-    margin-bottom: 14px;
+    margin-bottom: 10px;
   }
   .profile .description {
     font-size: 15px;
@@ -40,7 +40,7 @@
     margin-bottom: 16px !important;
   }
   .sectionObject h4 {
-    font-size: 14.5px;
+    font-size: 15px;
     font-weight: bold;
     margin: 0 0 6px;
   }
@@ -75,10 +75,10 @@
 <body class="A4">
   <section class="sheet padding-10mm">
     <div class="profile"></div>
-    <div class="education"></div>
-    <div class="skills"></div>
     <div class="employment"></div>
     <div class="projects"></div>
+    <div class="education"></div>
+    <div class="skills"></div>
   </section>
   <script type="text/javascript">
   (function() {
@@ -108,12 +108,12 @@
             "title": "Employment",
             "objects": [
               {
-                "title": "Software Engineer, Language Modeling",
+                "title": "Software Engineer, Speech Recognition",
                 "name": "SoundHound AI",
                 "location": "Toronto, Canada",
                 "url": "https://soundhound.com",
                 "duration": "Oct 2021 - Present",
-                "description": '- Implemented and trained statistical and neural language models used in automatic speech recognition (ASR) pipeline.<br>- Optimized Hebrew ASR performance by 10% on key performance indicator benchmark through LM experiments.<br>- Streamlined development process through implementing/managing data collection, analysis, and build scripts.'
+                "description": '- Lead development of RAPIDS + Spark-based distributed and GPU-accelerated training pipeline for large scale n-gram language models. Optimized build times and reduced technical debt of legacy Hadoop MapReduce codebase.<br>- Introduced Bayesian optimization-based hyperparameter tuning pipeline for statistical language models.<br>- Implemented and applied knowledge graph-based synthetic data generation method for model training in low resource domains, such as restaurant food ordering.<br>- Streamlined build process and diagnostics with ML ops/automation scripts, leading to addition build time optimizations and increased documentation on legacy systems.<br>- Key communicator between statistical and neural language modeling teams. Introduced ML techniques and tools from neural side to statistical side, and created in-depth documentation and presentations for statistical language model systems.'
               },
               {
                 "title": "SDE Intern, Search",
@@ -121,7 +121,7 @@
                 "location": "VirtualLocation",
                 "url": "https://amazon.com",
                 "duration": "Jun 2020 - Sep 2020",
-                "description": '- Optimized search engine efficiency and reduced engineering debt by implementing a dependency graph analyzer in Python to safely remove redundant search engine configuration objects.<br>- Implemented data processing pipelines for transferring data between AWS components.<br>- Devised methods to compress large data using data structures and compression algorithms.'
+                "description": '- Optimized search engine efficiency and reduced engineering debt by implementing a dependency graph analyzer in Python to safely remove redundant search engine configuration objects.'
               },
               {
                 "title": "Software Intern",
@@ -129,7 +129,7 @@
                 "location": "Tokyo, Japan",
                 "url": "https://mitsucari.com",
                 "duration": "Sep 2018 - Aug 2019",
-                "description": '- Designed and implemented model/view/controller components with Ruby on Rails, PostgreSQL, jQuery, Bootstrap, SASS.<br>- Wrote test suites and utilized CI/CD tools to deploy Ruby on Rails app hosted on Heroku.'
+                "description": '- Full stack web development with Ruby on Rails, PostgreSQL, jQuery, Bootstrap, SASS, and Heroku.'
               }
             ]
           },
@@ -140,20 +140,14 @@
               {
                 "name": "Webspeak to English Translator",
                 "url": "https://github.com/jonnyli1125/piemanese-translator",
-                "duration": "Feb 2022",
-                "description": '- Implemented statistical machine translation model for translating webspeak to English using Python and NLTK.<br>- Formulated problem as SMT task and defined model components by derivation of Bayes theorem.<br>- Trained n-gram statistical language models on web chat corpus to predict corrected English words from context.<br>- Innovated algorithmic model solutions due to lack of labelled data, using computational lingustics domain knowledge.<br>- Implemented Discord chat bot interface using Discord API and Python, and deployed to cloud with Docker and Heroku.'
+                "duration": "Feb 2022 - Present",
+                "description": '- Created statistical + neural hybrid machine translation model for translating webspeak to English using Python and Keras.<br>- Utilized similarity learning-based neural models to predict webspeak words given an English word, and implemented a speed/memory efficient n-gram language model from scratch to disambiguate candidate words based on context. Implemented beam search decoder from scratch to combine separate model outputs.<br>- Implemented synthetic data generation methods for neural model training on low resource webspeak domain.<br>- Implemented Discord chat bot interface using Discord API, and deployed to cloud with Docker and Heroku.'
               },
               {
                 "name": 'BERT-based Grammatical Error Correction',
                 "url": "https://github.com/jonnyli1125/gector-ja",
                 "duration": "Apr 2021 - Jun 2021",
-                "description": '- Implemented grammatical error correction model for Japanese, as described in a <a href="https://arxiv.org/abs/2005.12592">2020 Grammarly research paper</a>.<br>- Achieved state of the art result with 10% relative performance increase on benchmark corpus for Japanese GEC.<br>- Implemented neural network for predicting token-level edit transformations, using pretrained BERT model from Huggingface library and Keras/Tensorflow 2.<br>- Implemented data processing and synthetic data generation pipelines for Wikipedia dump and <a href="https://sites.google.com/site/naistlang8corpora/">Lang8 Parallel Corpus</a>, and training pipelines with Tensorflow and GCP/Colab.<br>- Created interactive web app demo using Python/Flask and HTML/CSS/JavaScript.'
-              },
-              {
-                "name": "Neural Shift-Reduce Dependency Parser",
-                "url": "https://github.com/jonnyli1125/jp-srparser",
-                "duration": "Apr 2021",
-                "description": '- Implemented shift-reduce dependency parser for Japanese with a feed-forward neural network to predict parser actions.<br>- Implemented model training and data processing pipelines for <a href="https://universaldependencies.org/treebanks/ja_gsd/index.html">UD Japanese GSD treebank corpus</a> in PyTorch.<br>- Implemented dependency tree visualization on interactive user input using spaCy and Colab.'
+                "description": '- Implemented grammatical error correction model for Japanese, as described in a <a href="https://arxiv.org/abs/2005.12592">2020 Grammarly research paper</a>.<br>- Achieved state of the art result with 10% relative performance increase on benchmark corpus for Japanese GEC.<br>- Implemented neural network for predicting token-level edit transformations, using pretrained BERT model from Huggingface library and Keras/Tensorflow 2.<br>- Implemented data processing and synthetic data generation pipelines for publicly available datasets and training pipelines with Tensorflow and GCP/Colab.<br>- Created interactive web app demo using Python/Flask and HTML/CSS/JavaScript.'
               }
             ]
           },
@@ -186,9 +180,9 @@
             "name": "skills",
             "title": "Skills",
             "objects": [
-              { "name": "Programming Languages", "description": "Python, JavaScript, Java, Perl" },
-              { "name": "Technologies/Frameworks", "description": "PyTorch, Keras/Tensorflow 2, scikit-learn, Colab/Jupyter, Git, SQL, Docker, Heroku" },
-              { "name": "Other", "description": "NLP, AI, Machine learning, Neural networks, Agile methodologies, Test suite frameworks, CI/CD tools" }
+              { "name": "Programming Languages", "description": "Python, Java, JavaScript" },
+              { "name": "Technologies/Frameworks", "description": "Apache Spark, Hadoop MapReduce, Keras/Tensorflow, PyTorch, scikit-learn, SQL, Docker, Kubernetes, Heroku, Git" },
+              { "name": "Other", "description": "NLP, Machine Learning, Neural Networks, Distributed Computing" }
             ]
           }
         ]
