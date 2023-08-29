@@ -7,8 +7,11 @@
     <meta name="keywords" content="Jonny,Li,headphase,jonnyli1125,jonnylii,李介鸿,李介鴻">
     <meta name="author" content="Jonny Li">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300" rel="stylesheet">
     <link href="https://secure.gravatar.com/avatar/edecc92c73ca5c68be7511b9a941ea3e?size=32" rel="icon">
     <title>Jonny Li</title>
     <style>
@@ -17,7 +20,6 @@
       }
       body {
         background: #fafafa;
-        font-family: 'Raleway', 'Meiryo', sans-serif;
         height: 100%;
         margin: 0;
       }
@@ -49,15 +51,11 @@
         width: 150px;
       }
       .name {
-        font-family: 'Open Sans', 'Meiryo', sans-serif;
         font-size: 48px;
         font-weight: normal;
       }
       .description, .links a {
         font-size: 18px;
-      }
-      span.ww {
-        display: inline-block;
       }
       .content {
         text-align: center;
@@ -67,6 +65,15 @@
         line-height: 75px;
         text-align: center;
         width: 100%;
+      }
+      .en-text {
+        font-family: 'Raleway', 'Open Sans', sans-serif;
+      }
+      .zh-text {
+        font-family: 'Raleway', 'Open Sans', 'Noto Sans SC', sans-serif;
+      }
+      .ja-text {
+        font-family: 'Raleway', 'Open Sans', 'Meiryo', sans-serif;
       }
       @media (min-width: 768px) {
         .avatar {
@@ -95,7 +102,7 @@
         <ul class="list-inline">
           <li class="list-inline-item"><a id="en" href="#en" class="link-unstyled">english</a></li>
           <li class="list-inline-item"><a id="ja" href="#ja">日本語</a></li>
-          <li class="list-inline-item"><a id="cn" href="#cn">中文</a></li>
+          <li class="list-inline-item"><a id="zh" href="#zh">中文</a></li>
         </ul>
       </div>
       <div class="wrapper-outer">
@@ -116,47 +123,56 @@
     </div>
     <script type="text/javascript">
       (function() {
-        var wrapSpans = function(strs) {
-          return '<span class="ww">' + strs.join('</span><span class="ww">') +
-              '</span>';
-        };
         var i18n = {
           'en': {
             'name': 'jonny li',
-            'description': wrapSpans(
-                ['university of toronto \'21 computer science/linguistics.&nbsp;',
-                'utokyo exchange program 2018-2019.']),
+            'description': [
+              'machine learning engineer @ soundhound ai.',
+              'university of toronto \'21 computer science/linguistics.',
+              'utokyo exchange program 2018-2019.'
+            ],
             'resume': 'resume'
           },
           'ja': {
             'name': 'リ・ジョニー',
-            'description': wrapSpans([
-                wrapSpans(['トロント大学で', 'コンピューター科学と',
-                '言語学を専攻。', '2021年卒業。']),
-                wrapSpans(['2018年～2019年', '東京大学で', '交換留学。'])]),
+            'description': [
+              '機械学習エンジニア @ soundhound ai。',
+              'トロント大学でコンピューター科学と言語学を専攻。2021年卒業。',
+              '2018年～2019年東京大学で交換留学。'
+            ],
             'resume': '履歴書 (英語)'
           },
-          'cn': {
-            'name': '李 介鴻',
-            'description': wrapSpans(
-                [wrapSpans(['多倫多大学主修', '計算機科学和語言学。', '2021年畢業。']),
-                '2018年-2019年東京大学交換留学。']),
-            'resume': 'resume'
+          'zh': {
+            'name': '李 介鸿',
+            'description': [
+              '机器学习工程师 @ soundhound ai。',
+              '多伦多大学主修计算机科学和语言学。 2021年毕业。',
+              '2018年-2019年东京大学交换留学。'
+            ],
+            'resume': 'resume（英文）'
           }
         };
         var setLanguage = function(lang) {
-          ['name', 'description', 'resume'].forEach(function(elm) {
+          ['name', 'resume'].forEach(function(elm) {
             document.getElementById(elm).innerHTML = i18n[lang][elm];
           });
+          document.getElementById('description').innerHTML = i18n[lang].description.join('<br>')
           document.querySelector('.language a.link-unstyled').className = '';
           document.getElementById(lang).className = 'link-unstyled';
+          var bodyClassList = document.getElementsByTagName('body')[0].classList;
+          bodyClassList.forEach(function(el) {
+            if (el.endsWith('-text')) {
+              bodyClassList.remove(el);
+            }
+          })
+          bodyClassList.add(lang + '-text');
         };
         document.querySelectorAll('.language a').forEach(function(elm) {
           elm.addEventListener('click', function(e) {
             setLanguage(e.target.id);
           });
         });
-        setLanguage(window.location.hash.substring(1) || "en");
+        setLanguage(window.location.hash.substring(1) || navigator.language.substring(0, 2) || 'en');
       })();
     </script>
   </body>
