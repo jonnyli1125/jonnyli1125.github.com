@@ -60,9 +60,6 @@
   .sectionObject:last-child {
     margin-bottom: 10px !important;
   }
-  .sectionObject.empty {
-    margin: 0;
-  }
   .sectionObject h4 {
     font-size: 15px;
     font-weight: bold;
@@ -75,10 +72,14 @@
     color: #888;
     font-weight: normal;
   }
-  .sectionObject p {
+  .sectionObject ul {
+    margin: 0;
+    padding-left: 25px;
+  }
+  .sectionObject li, .sectionObject p {
     color: #222;
     font-size: 13px;
-    line-height: 16px;
+    line-height: 18px;
     margin: 0;
   }
   .sectionObject span {
@@ -110,8 +111,7 @@
       "en": {
         "profile": {
           "name": "Jonny Li",
-          "title": "Machine Learning Engineer",
-          "description": "Focus in ASR (automatic speech recognition), language modeling, distributed computation, MLOps. Strong background in software engineering, algorithms & DS, full stack web development.",
+          "description": "ML engineer with strong software engineering background. Focus in NLP, language models, handling large datasets with distributed systems, model serving/inference optimization, and MLOps/DevOps.",
           "links": [
             '<i class="bi bi-globe"></i> <a href="https://jonny.li">https://jonny.li</a>',
             '<i class="bi bi-envelope"></i> <a href="jonny.li@mail.utoronto.ca">jonny.li@mail.utoronto.ca</a>',
@@ -128,7 +128,7 @@
                 "school": "University of Toronto",
                 "degree": "Honours Bachelor of Science",
                 "courses": "Machine Learning, AI, Computational Linguistics, NLP, Data Structures, Algorithms, Operating Systems",
-                "activities": "UTokyo Foreign Exchange, UofT Neurotech Workshops Lead, UofT Japan Assocation Webmaster",
+                "activities": "UTokyo Foreign Exchange, UofT Neurotech Workshops Lead, UofT Japan Assocation Staff",
                 "major": "Computer Science and Linguistics",
                 "graduation": "Graduated Jun 2021"
               }
@@ -144,7 +144,11 @@
                 "location": "Toronto, Canada",
                 "url": "https://soundhound.com",
                 "duration": "Aug 2023 - Present",
-                "description": []
+                "description": [
+                  'Wrote LLM inference server load testing library from scratch with Python, Kubernetes, and Docker to measure and compare latency/throughput of various open source libraries.',
+                  'Implemented custom forks of open source LLM inference servers, such as <a href="https://github.com/huggingface/text-generation-inference">huggingface/text-generation-inference</a> (Rust, PyTorch, HF/transformers) and <a href="https://github.com/vllm-project/vllm">vLLM</a> (Python, HF/transformers).',
+                  'Implemented novel second pass ASR hypothesis rescoring mechanism with instruction fine tuned LLMs such as T5 and Llama 2.'
+                ]
               },
               {
                 "title": "Software Engineer, Language Modeling",
@@ -153,20 +157,21 @@
                 "url": "https://soundhound.com",
                 "duration": "Oct 2021 - Aug 2023",
                 "description": [
-                  '- Implemented distributed cluster ETL pipelines with Apache Spark from scratch. Technical debt cleanup of 10+ year old legacy Hadoop MapReduce library to optimize compute times for large scale datasets. On-prem Hadoop and Spark cluster setup, maintenance, DevOps.',
-                  '- Implemented model training and pipelining Python library from scratch for building large scale statistical n-gram LM using Hydra, DVC, and open source + internal n-gram LM libraries. Applied and combined modern ML techniques (hyperparameter tuning, ensemble methods, etc) with legacy n-gram LM research for significant accuracy improvement in WFST-based classical ASR systems.',
-                  '- Implemented automation for model training pipelines using Airflow, Docker/k8s, Jenkins, Gitlab CI/CD. Introduced standard techniques in software engineering to internal ML codebases, like readable/user-friendly API design, code quality control, unit/integration testing, and CI/CD.',
-                  '- Implemented knowledge graph DB + LLM-based text generation pipelines for low-resource domain synthetic data generation. Fine tuned smaller, domain-specific GPT models used for ASR rescoring.'
+                  'Performed domain adaptation of GPT-2 ASR rescoring model by fine tuning with synthetic data generated from knowledge graph + LLM pipeline, using ArangoDB, HF/transformers, and Tensorflow.',
+                  'Implemented Apache Spark library from scratch for processing terabyte scale datasets and billion parameter scale n-gram LMs on distributed clusters, and reduced compute times by 2x over original codebase.',
+                  'Improved accuracy by relative 30% in n-gram LM-based ASR model with ML techniques such as hyperparameter tuning with Bayesian optimization, bagging, boosting, etc. using open source libraries such as scikit-learn, Hydra, nevergrad.',
+                  'Implemented perplexity/entropy-based n-gram pruning technique in Apache Spark to reduce parameter count by 100x while maintaining negligible loss in accuracy.',
+                  'Implemented Python library from scratch for invoking training workflows of large scale n-gram LMs, integration with Docker/Kubernetes, automated unit/integration testing, CI/CD pipelines, and automated scheduling with Airflow.',
                 ]
               },
               {
-                "title": "SDE Intern, Search Engine",
+                "title": "SDE Intern, Core Search Engine",
                 "name": "Amazon",
                 "location": "Vancouver, Canada (Remote)",
                 "url": "https://amazon.com",
                 "duration": "Jun 2020 - Sep 2020",
                 "description": [
-                  '- Optimized search engine efficiency and reduced engineering debt by implementing a dependency graph analyzer in Python to safely remove redundant search engine configuration objects.'
+                  //'Optimized search engine efficiency and reduced engineering debt by implementing a dependency graph analyzer in Python to safely remove redundant search engine configuration objects.'
                 ]
               },
               {
@@ -176,21 +181,21 @@
                 "url": "https://mitsucari.com",
                 "duration": "Sep 2018 - Aug 2019",
                 "description": [
-                  '- Full stack web development with Ruby on Rails, PostgreSQL, jQuery, Bootstrap, SASS, and Heroku.'
+                  //'Full stack web development with Ruby on Rails, PostgreSQL, jQuery, Bootstrap, SASS, and Heroku.'
                 ]
               }
             ]
           },
           {
             "name": "projects",
-            "title": "Projects",
+            "title": "Personal Projects",
             "objects": [
               {
-                "name": "LLM Docs Assistant",
-                "url": "https://github.com/jonnyli1125/docs-assistant",
-                "duration": "May 2023",
+                "name": "RNN-Transducer in 100 lines",
+                "url": "https://gist.github.com/jonnyli1125/e5bab12ed6f36711c57807b7f1528f3a",
+                "duration": "Oct 2023",
                 "description": [
-                  "- Created a Slack chatbot assistant to search Confluence documentation wikis with vector DB semantic search + LLM embeddings using OpenAI API, LangChain, llama.cpp, ChromaDB, and Slack API."
+                  'Implemented the <a href="https://arxiv.org/pdf/1211.3711.pdf">RNN Sequence Transducer (Graves 2012)</a> in 100 lines of numpy, including a beam search decoder.'
                 ]
               },
               {
@@ -198,10 +203,10 @@
                 "url": "https://github.com/jonnyli1125/piemanese-translator",
                 "duration": "Feb 2022 - Nov 2022",
                 "description": [
-                  '- Created statistical + neural hybrid machine translation model for translating webspeak to English using Python and Keras.',
-                  '- Implemented a similarity learning-based neural model for recognizing similarly spelled words, memory efficient n-gram language model optimized for low latency, and beam search decoder, all from scratch.',
-                  '- Implemented synthetic data generation methods for neural model training on low resource webspeak domain.',
-                  '- Implemented Discord chat bot interface using Discord API, and deployed to cloud with Docker and Heroku.'
+                  'Implemented and trained character-level CNN with contrastive learning in Keras for recognizing similarly spelled words.',
+                  'Implemented beam search decoder with n-gram language model to create statistical/neural hybrid translation model.',
+                  'Implemented synthetic data generation pipelines based on <a href="https://aclanthology.org/D19-1435.pdf">2019 grammatical error correction paper</a> to overcome lack of training data.',
+                  'Implemented Discord chat bot interface using Discord API, and deployed to cloud with Docker and Heroku.'
                 ]
               },
               {
@@ -209,9 +214,18 @@
                 "url": "https://github.com/jonnyli1125/gector-ja",
                 "duration": "Apr 2021 - Jun 2021",
                 "description": [
-                  '- Implemented state of the art BERT-based grammatical error correction model with 10% gain over previous best model.',
-                  '- Reproduced <a href="https://arxiv.org/abs/2005.12592">2020 Grammarly research paper</a> in Tensorflow/Keras and Huggingface transformer modules.',
-                  '- Implemented scalable, memory-efficient, synthetic data generation and training pipelines for large datasets that don\'t fit in memory, with Tensorflow and Google Cloud + Colab.<br>- Created interactive web app demo using Python/Flask and HTML/CSS/JavaScript.'
+                  'Implemented state of the art BERT-based grammatical error correction model with 10% gain over previous best model.',
+                  'Reproduced <a href="https://arxiv.org/abs/2005.12592">2020 Grammarly research paper</a> in Tensorflow/Keras and Huggingface transformer modules.',
+                  'Implemented scalable, memory-efficient, synthetic data generation and training pipelines for large datasets that don\'t fit in memory, with Tensorflow and GCP + Colab.',
+                  'Created interactive web app demo using Python/Flask and HTML/CSS/JavaScript.'
+                ]
+              },
+              {
+                "name": 'MCTS + Transformer-based Chess Engine',
+                "url": "https://github.com/jonnyli1125/chess-bert-mcts",
+                "duration": "Jun 2021",
+                "description": [
+                  'Implemented an AlphaZero-inspired, experimental chess engine with multi-threaded Monte Carlo Tree Search and BERT for policy/value networks, using HF/transformers, PyTorch, and PyTorch Lightning for model implementation/training.',
                 ]
               }
             ]
@@ -227,15 +241,14 @@
               }
             ]
           },
-          {
+          /*{
             "name": "skills",
             "title": "Skills",
             "objects": [
-              { "name": "Programming Languages", "description": "Python, Java, Bash, JavaScript" },
-              { "name": "Technologies/Frameworks", "description": "Apache Spark, Hadoop MapReduce, Docker, Kubernetes, Airflow, Jenkins, Gitlab CI/CD, Keras/Tensorflow, PyTorch, scikit-learn" },
-              { "name": "General", "description": "MLOps, DevOps, NLP, Machine Learning, Distributed Computing" }
+              { "name": "Programming Languages", "description": "Python, Bash, Java, JavaScript, Rust" },
+              { "name": "Technologies/Frameworks", "description": "Docker, Kubernetes, Spark, Hadoop, PyTorch, HF/transformers, Keras/Tensorflow, scikit-learn, Airflow, Jenkins, CI/CD." },
             ]
-          }
+          }*/
         ]
       }
     };
@@ -243,7 +256,7 @@
     var profile = i18n[language].profile;
     document.getElementsByClassName("profile")[0].innerHTML = "<h1>" + profile.name + "</h1>" +
     "<div class='links'>" + profile.links.map(function(el) { return "<span class='link'>" + el + "</span>" }).join('') + "</div>" +
-    "<div class='description'>" + profile.title + ". " + profile.description + "</div>";
+    "<div class='description'>" + profile.description + "</div>";
     i18n[language].sections.forEach(function(section, section_index) {
       var sectionElements = document.getElementsByClassName(section.name);
       if (!sectionElements.length) return;
@@ -254,9 +267,6 @@
         switch (section.name) {
           case "employment":
             var cssClass = 'sectionObject';
-            if (object.description.length == 0) {
-              cssClass += ' empty';
-            }
             var title = object.title + ' - <a href="' + object.url + '" target="_blank">' + object.name + '</a>';
             if (object.location) {
               title += ' <small>@ ' + object.location + '</small>';
@@ -264,14 +274,14 @@
             objectContents += '<div class="' + cssClass + '">' +
             '<span>' + object.duration + '</span>' +
             '<h4>' + title + '</h4>' +
-            '<p>' + object.description.join('<br>') + '</p>' +
+            '<ul>' + object.description.map((x) => '<li>' + x + '</li>').join('') + '</ul>' +
             '</div>';
             break;
           case "projects":
             objectContents += '<div class="sectionObject">' +
             '<span>' + object.duration + '</span>' +
             '<h4><a' + (object.url ? ' href="' + object.url + '" target="_blank"' : '') + '>' + object.name + '</a> ' + (object.url ? '<small>@ <a href="' + object.url + '">' + object.url.replace(/https?:\/\//, '') + '</a></small>' : '') + '</h4>' +
-              '<p>' + object.description.join('<br>') + '</p>' +
+              '<ul>' + object.description.map((x) => '<li>' + x + '</li>').join('') + '</ul>' +
               '</div>';
               break;
           case "education":
