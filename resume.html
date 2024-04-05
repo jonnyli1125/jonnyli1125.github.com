@@ -112,7 +112,7 @@
       "en": {
         "profile": {
           "name": "Jonny Li",
-          "description": "Full-stack ML engineer with strong software engineering background. Focus in NLP, language models, and ASR.",
+          "description": "Full-stack ML engineer with strong software engineering background. Focus in language models and ASR.",
           "links": [
             '<i class="bi bi-globe"></i> <a href="https://jonny.li">https://jonny.li</a>',
             '<i class="bi bi-envelope"></i> <a href="jonny.li@mail.utoronto.ca">jonny.li@mail.utoronto.ca</a>',
@@ -146,10 +146,8 @@
                 "url": "https://soundhound.com",
                 "duration": "Aug 2023 - Present",
                 "description": [
-                  'Authored from scratch LLM inference latency/throughput load testing library, integrated with vLLM, text-generation-inference, TensorRT-LLM, Triton Inference Server, and Docker/Kubernetes/Helm',
-                  'Implemented LLM-based ASR hypothesis reranking/rescoring server with custom text-generation-inference fork in Python and Rust',
-                  'Implemented hyperparameter tuning and ASR model training pipelines in PyTorch',
-                  'Implemented and ran LoRA training experiments on ASR models to achieve scalable domain adaptation',
+                  'Developed custom fork of text-generation-inference LLM inference server with Python and Rust, and implemented a latency/throughput load testing framework in Python',
+                  'Researched and developed domain adaptation techniques for neural ASR models, and implemented data, model, training, and hyperparameter tuning pipelines with PyTorch and related libraries',
                 ]
               },
               {
@@ -160,9 +158,9 @@
                 "duration": "Oct 2021 - Aug 2023",
                 "description": [
                   'Authored from scratch large scale ETL pipelines with Apache Spark, achieved 2x speed gain over Hadoop MapReduce through Spark optimizations',
-                  'Authored from scratch Python MLOps library with unit/integration/end-to-end testing, Docker, Kubernetes, Gitlab CI/CD, Jenkins, Airflow, and reduced time spent on manual supervision/intervention by 5x',
-                  'Implemented hyperparameter tuning infrastructure for n-gram based ASR models, realized 30% accuracy gain in production model',
-                  'Ran GPT fine-tuning experiments and implemented synthetic data generation pipelines with LLMs and knowledge graphs, achieved 10% in-domain accuracy gain',
+                  'Developed from scratch Python MLOps library with unit/integration/end-to-end testing, Docker, Kubernetes, Gitlab CI/CD, Jenkins, Airflow, and reduced time spent on manual supervision/intervention tasks by 5x',
+                  'Implemented hyperparameter tuning infrastructure for n-gram based ASR models, realized 30% relative accuracy gain in production model',
+                  'Ran GPT fine-tuning experiments for ASR rescoring and implemented synthetic data generation pipelines with LLMs and knowledge graphs, achieved 10% in-domain accuracy gain',
                 ]
               },
               {
@@ -191,6 +189,15 @@
             "name": "projects",
             "title": "Personal Projects",
             "objects": [
+              {
+                "name": "Neural Network in Numpy",
+                "url": "https://gist.github.com/jonnyli1125/1ad95073ff218d00cc4faee133f05dcc",
+                "duration": "Feb 2024",
+                "description": [
+                  'Implemented from scratch a feed-forward multi-layer neural network, SGD, backpropagation, and training pipeline with numpy only',
+                  'Tutored high school students basics of ML theory/engineering using notebook as example material'
+                ]
+              },
               /*{
                 "name": "RNN-Transducer in 100 lines",
                 "url": "https://gist.github.com/jonnyli1125/e5bab12ed6f36711c57807b7f1528f3a",
@@ -209,7 +216,7 @@
                 ]
               },
               {
-                "name": 'Japanese Grammatical Error Correction',
+                "name": 'Japanese Grammatical Error Corrector',
                 "url": "https://github.com/jonnyli1125/gector-ja",
                 "duration": "Apr 2021 - Jun 2021",
                 "description": [
@@ -225,15 +232,6 @@
                   'Implemented multi-threaded Monte Carlo Tree Search, ran BERT fine-tuning experiments, and implemented training pipelines with PyTorch Lightning and Huggingface Transformers',
                 ]
               },*/
-              {
-                "name": "Neural network from scratch",
-                "url": "https://gist.github.com/jonnyli1125/1ad95073ff218d00cc4faee133f05dcc",
-                "duration": "Feb 2024",
-                "description": [
-                  'Implemented feed-forward multi-layer neural network, SGD, backpropagation, and training pipeline from scratch in numpy on MNIST digit classification task',
-                  'Tutored high school students basics of ML using notebook as example material'
-                ]
-              }
             ]
           },
           {
