@@ -15,7 +15,7 @@
   h1 {
     font-weight: 500;
     font-size: 32px;
-    margin: -8px 0 4px;
+    margin: -8px 0 14px;
   }
   h2 {
     border-bottom: 1px solid #b9b9b9;
@@ -32,6 +32,11 @@
     margin-bottom: 14px;
     position: relative;
   }
+  .profile .title {
+    font-size: 15px;
+    margin: 0;
+    margin-bottom: 8px;
+  }
   .profile .description {
     font-size: 14px;
     line-height: 18px;
@@ -39,7 +44,10 @@
   .profile .links {
     font-size: 14px;
     line-height: 14px;
-    margin-bottom: 8px;
+    /*margin-bottom: 10px;*/
+    position: absolute;
+    top: 10px;
+    right: 0;
   }
   .profile .links .link {
     margin: 0;
@@ -112,7 +120,8 @@
       "en": {
         "profile": {
           "name": "Jonny Li",
-          "description": "Full-stack ML engineer with strong software engineering background. Focus in language models and ASR.",
+          "title": "ML research engineer with strong software engineering background.",
+          "description": "I train LLMs and ASR models to build AI voice assistants, combining my expertise in machine learning with my experience in distributed computing. I also like to keep up with the latest ML research papers when I'm not coding.",
           "links": [
             '<i class="bi bi-globe"></i> <a href="https://jonny.li">https://jonny.li</a>',
             '<i class="bi bi-envelope"></i> <a href="jonny.li@mail.utoronto.ca">jonny.li@mail.utoronto.ca</a>',
@@ -137,42 +146,44 @@
           },
           {
             "name": "employment",
-            "title": "Employment",
+            "title": "Work Experience",
             "objects": [
             {
-                "title": "ML Engineer II, Language Modeling",
+                "title": "ML Engineer II, Research & Development",
                 "name": "SoundHound AI",
                 "location": "Toronto, Canada",
                 "url": "https://soundhound.com",
                 "duration": "Aug 2023 - Present",
                 "description": [
-                  'Implemented and conducted R&D experiments on supervised fine-tuning and multi-modality of LLMs for use with voice-based virtual assistants',
-                  'Lead development of distributed LLM training and evaluation infrastructure with Ray, Kubernetes, DeepSpeed, Accelerate, Transformers, and PEFT libraries',
-                  'Developed LLM inference server deployment and load testing library, along with forks of open source LLM inference servers (vLLM, TGI) in Python and Rust',
-                  'Conducted domain adaptation experiments for transducer-based streaming ASR models and implemented training/hyperparameter tuning infrastructure with PyTorch, Docker, Kubernetes',
+                  'Trained LLMs on instruction following and audio multi-modality for NLU research experiments',
+                  'Led the development of LLM training & evaluation library with Ray, DeepSpeed, Accelerate, Transformers, TRL, PEFT, Kubernetes',
+                  'Developed LLM inference server (vLLM, TGI) forks in Python and Rust and deployment tools with Helm',
+                  'Trained transducer-based ASR models for domain adaptation research experiments',
+                  'Implemented ASR training/hyperparameter tuning pipelines with PyTorch, Docker, Kubernetes',
                 ]
               },
               {
-                "title": "Software Engineer, Language Modeling",
+                "title": "Software Engineer, MLOps",
                 "name": "SoundHound AI",
                 "location": "Toronto, Canada",
                 "url": "https://soundhound.com",
                 "duration": "Oct 2021 - Aug 2023",
                 "description": [
-                  'Authored from scratch large scale ETL pipelines with Apache Spark, achieved 2x speed gain over Hadoop MapReduce through Spark optimizations',
-                  'Developed from scratch Python MLOps library with unit/integration/end-to-end testing, Docker, Kubernetes, Gitlab CI/CD, Jenkins, Airflow, and reduced time spent on manual supervision/intervention tasks by 5x',
-                  'Implemented hyperparameter tuning infrastructure for n-gram based ASR models, realized 30% relative accuracy gain in production model',
-                  'Ran GPT fine-tuning experiments for ASR rescoring and implemented synthetic data generation pipelines with LLMs and knowledge graphs, achieved 10% in-domain accuracy gain',
+                  'Created MLOps library with Python, Docker, Kubernetes, Gitlab CI/CD, Jenkins, Airflow and reduced time spent on manual tasks by 5x',
+                  'Implemented hyperparameter tuning for n-gram ASR models and realized 30% accuracy gain in production',
+                  'Fine-tuned GPT-2 with knowledge graphs and synthetic data, improving domain adaptation accuracy by 10%',
+                  'Built ETL pipelines with Apache Spark and achieved 2x speed gain over old Hadoop MapReduce pipelines',
+                  'Setup, deployed and managed on-prem HDFS and Spark cluster'
                 ]
               },
               {
-                "title": "SDE Intern, Core Search Engine",
+                "title": "SDE Intern, Backend Search Engine",
                 "name": "Amazon",
-                "location": "Vancouver, Canada (Remote)",
+                "location": "Vancouver, Canada",
                 "url": "https://amazon.com",
                 "duration": "Jun 2020 - Sep 2020",
                 "description": [
-                  //'Optimized search engine efficiency and reduced tech debt by implementing a dependency graph analyzer in Python to safely remove redundant configuration objects'
+                  'Optimized backend search engine efficiency and reduced tech debt by implementing a dependency graph analyzer in Python to safely remove redundant configuration objects'
                 ]
               },
               {
@@ -182,7 +193,7 @@
                 "url": "https://mitsucari.com",
                 "duration": "Sep 2018 - Aug 2019",
                 "description": [
-                  //'Full stack web development with Ruby on Rails, PostgreSQL, jQuery, Bootstrap, SASS, and Heroku'
+                  'Full stack web development with Ruby on Rails, PostgreSQL, jQuery, Bootstrap, SASS, and Heroku'
                 ]
               }
             ]
@@ -196,25 +207,26 @@
                 "url": "https://gist.github.com/jonnyli1125/1ad95073ff218d00cc4faee133f05dcc",
                 "duration": "Feb 2024",
                 "description": [
-                  'Implemented from scratch a feed-forward multi-layer neural network, SGD, backpropagation, and training pipeline with numpy only',
-                  'Tutored high school students basics of ML theory/engineering using notebook as example material'
+                  'Implemented neural network, SGD, backpropagation, and training pipeline with numpy only',
+                  'Tutored ML theory and engineering to high school students with notebook as example'
                 ]
               },
-              /*{
-                "name": "RNN-Transducer in 100 lines",
+              {
+                "name": "RNN-Transducer in Numpy",
                 "url": "https://gist.github.com/jonnyli1125/e5bab12ed6f36711c57807b7f1528f3a",
                 "duration": "Oct 2023",
                 "description": [
-                  'Implemented the <a href="https://arxiv.org/pdf/1211.3711.pdf">RNN Sequence Transducer (Graves 2012)</a> in 100 lines of numpy, including a beam search decoder.'
+                  'Implemented <a href="https://arxiv.org/pdf/1211.3711.pdf">RNN Sequence Transducer (Graves 2012)</a> in 100 lines of numpy with a beam search decoder'
                 ]
-              },*/
+              },
               {
                 "name": "Webspeak to English Translator",
                 "url": "https://github.com/jonnyli1125/piemanese-translator",
                 "duration": "Feb 2022 - Nov 2022",
                 "description": [
-                  'Ran training experiments for contrastive learning CNN models in Keras/Tensorflow, and implemented an evaluation/testing framework for translation models',
-                  'Implemented from scratch beam search decoding with n-gram LM fusion and memory-efficient n-gram counting/inference',
+                  'Trained contrastive loss CNNs in Keras/Tensorflow for spelling correction task',
+                  'Implemented evaluation and testing framework for translation models in Python',
+                  'Implemented beam search decoder and n-gram LM biasing module from scratch',
                 ]
               },
               {
@@ -222,8 +234,9 @@
                 "url": "https://github.com/jonnyli1125/gector-ja",
                 "duration": "Apr 2021 - Jun 2021",
                 "description": [
-                  'Implemented <a href="https://arxiv.org/abs/2005.12592">2020 Grammarly research paper</a> in Keras/Tensorflow and ran BERT fine-tuning experiments, achieved 10% accuracy gain over previous state of the art model',
-                  'Implemented parallelized synthetic data generation and distributed training pipelines for larger-than-memory dataset with significant class imbalance',
+                  'Implemented and trained BERT model from <a href="https://arxiv.org/abs/2005.12592">2020 Grammarly research paper</a> in Keras/Tensorflow',
+                  'Fine-tuned with synthetic data generation pipeline to improve performance on class imbalanced dataset',
+                  'Achieved 10% accuracy gain over previous state of the art model',
                 ]
               },
               /*{
@@ -262,6 +275,7 @@
     var profile = i18n[language].profile;
     document.getElementsByClassName("profile")[0].innerHTML = "<h1>" + profile.name + "</h1>" +
     "<div class='links'>" + profile.links.map(function(el) { return "<span class='link'>" + el + "</span>" }).join('') + "</div>" +
+    "<p class='title'>" + profile.title + "</p>" +
     "<div class='description'>" + profile.description + "</div>";
     i18n[language].sections.forEach(function(section, section_index) {
       var sectionElements = document.getElementsByClassName(section.name);
