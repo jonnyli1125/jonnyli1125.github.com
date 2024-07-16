@@ -155,7 +155,7 @@
                 "url": "https://soundhound.com",
                 "duration": "Aug 2023 - Present",
                 "description": [
-                  'Trained LLMs on instruction following and audio multi-modality for NLU research experiments',
+                  'Trained LLMs on instruction following and audio multi-modality for voice assistant NLU research experiments',
                   'Led the development of LLM training & evaluation library with Ray, DeepSpeed, Accelerate, Transformers, TRL, PEFT, Kubernetes',
                   'Developed LLM inference server (vLLM, TGI) forks in Python and Rust and deployment tools with Helm',
                   'Trained transducer-based ASR models for domain adaptation research experiments',
@@ -288,9 +288,9 @@
           case "employment":
             var cssClass = 'sectionObject';
             var title = object.title + ' - <a href="' + object.url + '" target="_blank">' + object.name + '</a>';
-            if (object.location) {
-              title += ' <small>@ ' + object.location + '</small>';
-            }
+            //if (object.location) {
+            //  title += ' <small>@ ' + object.location + '</small>';
+            //}
             objectContents += '<div class="' + cssClass + '">' +
             '<span>' + object.duration + '</span>' +
             '<h4>' + title + '</h4>' +
