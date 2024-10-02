@@ -149,13 +149,14 @@
             "title": "Work Experience",
             "objects": [
             {
-                "title": "ML Engineer II, Modeling",
+                "title": "ML Engineer II, LLM R&D",
                 "name": "SoundHound AI",
                 "location": "Toronto, Canada",
                 "url": "https://soundhound.com",
                 "duration": "Aug 2023 - Present",
                 "description": [
-                  'Conducted/implemented LLM training experiments on instruction following and audio/text multi-modality for voice assistant NLU tasks',
+                  'Implemented and conducted experiments for audio+text multi-modality by integrating pre-trained LLMs with audio encoders',
+                  'Trained LLMs on instruction following and agentic function calling tasks for voice assistant NLU product',
                   'Implemented LLM training and evaluation library from scratch with Ray, DeepSpeed, Accelerate, Transformers, TRL, PEFT, Kubernetes',
                   'Developed LLM inference server (vLLM, TGI) forks for constrained/guided text generation in Python, Rust, gRPC',
                   'Implemented LLM inference server load testing library and deployment tools with Python, Kubernetes, and Helm',
@@ -319,7 +320,7 @@
             '<h4>' + object.school + '</h4>' +
             '<p><strong>' + object.degree + ', ' + object.major + '</strong></p>' +
             '<p>Courses: ' + object.courses + '</p>' +
-            '<p>Activities: ' + object.activities + '</p>' +
+            //'<p>Activities: ' + object.activities + '</p>' +
             '</div>';
             break;
           case "certifications":
