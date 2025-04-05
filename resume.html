@@ -70,7 +70,7 @@
   }
   .sectionObject h4 {
     font-size: 15px;
-    font-weight: bold;
+    font-weight: 500;
     margin: 0 0 6px;
   }
   .sectionObject h4 a {
@@ -102,7 +102,7 @@
   }
   li.sectionObject {
     font-size: 15px;
-    font-weight: bold;
+    font-weight: 500;
   }
   </style>
 </head>
@@ -120,7 +120,7 @@
       "en": {
         "profile": {
           "name": "Jonny Li",
-          "title": "ML research engineer with strong software engineering background.",
+          "title": "ML research engineer with experience in LLMs and ASR.",
           "description": "I build AI voice assistants with LLMs and ASR models at <a href='https://soundhound.com'>SoundHound AI</a>.",
           "links": [
             '<i class="bi bi-globe"></i> <a href="https://jonny.li">https://jonny.li</a>',
@@ -149,36 +149,39 @@
             "title": "Experience",
             "objects": [
             {
-                "title": "ML Engineer II, LLM R&D",
+                "title": "Machine Learning Engineer II",
                 "name": "SoundHound AI",
                 "location": "Toronto, Canada",
                 "url": "https://soundhound.com",
                 "duration": "Aug 2023 - Present",
                 "description": [
+                  'Trained and deployed to production an ASR error correction LLM that rewrites and corrects entity name mistranscriptions in an ASR model\'s output given a list of names in the prompt, achieving up to 90% accuracy gain in transcribing contact names, menu items, etc',
+                  'Researched and applied supervised fine tuning, distillation, reinforcement learning, and synthetic data generation techniques to fine tune LLMs for specific tasks',
                   'Researched, implemented, and trained multi-modal speech/text LLMs with neural speech adapters and speech tokenization methods',
-                  'Designed and created synthetic data generation techniques for training LLMs on agentic function calling tasks, for development of LLM-based voice assistant NLU',
-                  'Implemented LLM training and evaluation library from scratch with Ray, DeepSpeed, Accelerate, Transformers, TRL, PEFT, Kubernetes',
-                  'Developed LLM inference server forks of vLLM and TGI for constrained text generation in Python, Rust, gRPC',
-                  'Researched and implemented fine-tuning and LoRA-based domain adaptation techniques for ASR models',
+                  'Authored cross-team distributed LLM training and evaluation library with Ray, DeepSpeed, Accelerate, Transformers, TRL, PEFT, Kubernetes',
+                  'Implemented data loading pipelines for streaming large amounts of audio and text data from S3 and applying async/lazy transformations on IO-bound datasets using Boto3, PyTorch, Torchaudio',
+                  'Optimized and balanced tradeoffs between accuracy, latency, throughput, and cost of production LLMs with distillation, quantization, RAG, embedding search/filtering techniques',
+                  'Developed forks of LLM inference servers like vLLM and TGI for task-specific constrained generation in Python and Rust',
+                  'Implemented and fine-tuned ASR models to improve transcription accuracy of domain-specific words'
                 ]
               },
               {
-                "title": "Software Engineer, ML Algorithms",
+                "title": "Software Engineer",
                 "name": "SoundHound AI",
                 "location": "Toronto, Canada",
                 "url": "https://soundhound.com",
                 "duration": "Oct 2021 - Aug 2023",
                 "description": [
-                  'Implemented knowledge graphs and synthetic data generation for ASR transcription reranking models with Python and ArangoDB',
-                  'Conducted fine-tuning experiments with GPT-2 for ASR transcription reranking with Tensorflow',
                   'Implemented hyperparameter tuning algorithm for optimizing training dataset weights and realized 30% accuracy gain in production ASR model',
                   'Created MLOps library for automating training workflows with Python, Docker, Kubernetes, Gitlab CI/CD, Jenkins, Airflow, and reduced time spent on manual tasks by 5x',
                   'Built ETL pipelines with Apache Spark in Python/Java and achieved 2x speed gain over old MapReduce pipelines',
-                  'Implemented and trained large scale n-gram LMs for ASR in Python, Java, C++, and Bash',
+                  'Implemented large scale knowledge graphs and synthetic data generation pipelines with Python and ArangoDB',
+                  'Fine-tuned GPT-2 for ASR transcription rescoring with Tensorflow',
+                  'Implemented and trained large scale n-gram LMs for ASR in Python, Java, C++, and Bash'
                 ]
               },
               {
-                "title": "SDE Intern, Backend Search Engine",
+                "title": "SDE Intern, Core Search",
                 "name": "Amazon",
                 "location": "Vancouver, Canada",
                 "url": "https://amazon.com",
@@ -217,11 +220,11 @@
                 "url": "https://gist.github.com/jonnyli1125/1ad95073ff218d00cc4faee133f05dcc",
                 "duration": "Feb 2024",
                 "description": [
-                  'Implemented neural network, SGD, backpropagation, and training pipeline with numpy only',
-                  'Tutored ML theory and engineering to high school students with notebook as example'
+                  'Implemented neural network, SGD, backpropagation, and training pipeline from scratch with numpy only',
+                  'Tutored ML theory and engineering to high school students'
                 ]
               },
-              {
+              /*{
                 "name": "RNN-Transducer in Numpy",
                 "url": "https://gist.github.com/jonnyli1125/e5bab12ed6f36711c57807b7f1528f3a",
                 "duration": "Oct 2023",
@@ -237,7 +240,7 @@
                   'Trained contrastive loss CNNs in Keras/Tensorflow for spelling correction/translation task',
                   'Implemented beam search decoder and n-gram LM biasing module from scratch',
                 ]
-              },
+              },*/
               {
                 "name": 'Japanese Grammatical Error Correction BERT',
                 "url": "https://github.com/jonnyli1125/gector-ja",
@@ -317,7 +320,7 @@
             objectContents += '<div class="sectionObject">' +
             '<span>' + object.graduation + '</span>' +
             '<h4>' + object.school + '</h4>' +
-            '<p><strong>' + object.degree + ', ' + object.major + '</strong></p>' +
+            '<p>' + object.degree + ', ' + object.major + '</p>' +
             '<p>Courses: ' + object.courses + '</p>' +
             //'<p>Activities: ' + object.activities + '</p>' +
             '</div>';
