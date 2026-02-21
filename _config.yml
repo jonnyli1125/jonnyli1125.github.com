@@ -1,0 +1,29 @@
+title: Jonny Li
+description: Machine learning engineer at SoundHound AI.
+url: "https://jonny.li"
+baseurl: ""
+
+author:
+  name: Jonny Li
+  github: jonnyli1125
+  linkedin: jonnylii
+  gravatar: edecc92c73ca5c68be7511b9a941ea3e
+
+permalink: /blog/:year/:month/:day/:title/
+
+markdown: kramdown
+highlighter: rouge
+
+sass:
+  sass_dir: _sass
+  style: compressed
+
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - README.md
+  - vendor/

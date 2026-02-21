@@ -1,0 +1,42 @@
+---
+layout: default
+---
+
+<section class="profile">
+  <img
+    src="https://secure.gravatar.com/avatar/{{ site.author.gravatar }}?size=200"
+    alt="{{ site.author.name }}"
+    class="avatar"
+  >
+  <div class="profile-info">
+    <h1 class="profile-name">{{ site.author.name | downcase }}</h1>
+    <p class="profile-bio">
+      machine learning engineer @
+      <a href="https://www.soundhound.com" target="_blank" rel="noopener">soundhound ai</a>.<br>
+      university of toronto &rsquo;21 &mdash; computer science &amp; linguistics.<br>
+      utokyo exchange program 2018&ndash;2019.
+    </p>
+    <ul class="profile-links">
+      <li><a href="/Jonny_Li_resume.pdf" target="_blank" rel="noopener">resume</a></li>
+      <li><a href="https://github.com/{{ site.author.github }}" target="_blank" rel="noopener">github</a></li>
+      <li><a href="https://www.linkedin.com/in/{{ site.author.linkedin }}/" target="_blank" rel="noopener">linkedin</a></li>
+    </ul>
+  </div>
+</section>
+
+{% if site.posts.size > 0 %}
+<section class="recent-posts">
+  <h2 class="section-label">recent posts</h2>
+  <ul class="post-list">
+    {% for post in site.posts limit:5 %}
+    <li class="post-item">
+      <time class="post-date" datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%b %-d, %Y" }}</time>
+      <a href="{{ post.url | relative_url }}" class="post-link">{{ post.title }}</a>
+    </li>
+    {% endfor %}
+  </ul>
+  {% if site.posts.size > 5 %}
+  <a href="{{ '/blog/' | relative_url }}" class="view-all">view all posts &rarr;</a>
+  {% endif %}
+</section>
+{% endif %}
