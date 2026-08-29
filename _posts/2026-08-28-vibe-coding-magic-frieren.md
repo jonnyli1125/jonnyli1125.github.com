@@ -24,9 +24,9 @@ I'd like to throw out a hypothesis here: **the impact of a software engineer wit
 
 It is probably actually impossible for AI to one-shot the exact thing you wanted to build if you don't specify it in detail, because the space of things that fit your description is too large otherwise.
 
-## Coding agents amplify experts' impact more because they can visualize better
-
 The ability to visualize has always been important, even before coding agents and AI, but it feels like it's becoming especially important now as coding agents get better. Prior to coding agents, maybe you could visualize how something works, but it might have taken massive effort to learn all the coding frameworks, concepts, libraries, etc to achieve that. However, as coding agents get better, the need for prerequisite knowledge approaches zero, and instead the ability to visualize what is happening and what you want becomes the determing factor for impact.
+
+## Coding agents amplify experts' impact more because they can visualize better
 
 Naturally, deeper knowledge in a field is correlated with more detailed visualization, which is why I think it makes total sense that an expert with a coding agent will always be able to deliver more impact than a novice with a coding agent.
 
