@@ -6,7 +6,7 @@ description: "The ability to realize positive impact with coding agents is a fun
 tags: [ai,software-engineering,shower-thoughts]
 ---
 
-## Visualization = Realization
+# Visualization = Realization
 
 It randomly occurred to me recently that there are a lot of parallels between modern software engineering with coding agents and the magic system in Frieren. Not sure if anybody else has talked about it but I'll just dump my thoughts here.
 
