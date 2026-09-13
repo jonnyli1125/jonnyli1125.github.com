@@ -22,7 +22,7 @@ There is a weird parallel of this visualization = realization idea to writing co
 
 I'd like to throw out a hypothesis here: **the impact of a software engineer with a coding agent is determined directly by their ability to *visualize* what they're building.** The more detail in which you can visualize what you want to build, the higher the probability you'll be able to *realize* that exact thing you wanted, instead of getting just slop code.
 
-It is probably actually impossible for AI to one-shot the exact thing you wanted to build if you don't specify it in detail, because the space of things that fit your description is too large otherwise.
+It is probably impossible for AI to one-shot the exact thing you wanted to build if you don't specify it in detail, because the space of things that fit your description is too large otherwise.
 
 The ability to visualize has always been important, even before coding agents and AI, but it feels like it's becoming especially important now as coding agents get better. Prior to coding agents, maybe you could visualize how something works, but it might have taken massive effort to learn all the coding frameworks, concepts, libraries, etc to achieve that. However, as coding agents get better, the need for prerequisite knowledge approaches zero, and instead the ability to visualize what is happening and what you want becomes the determing factor for impact.
 
@@ -30,6 +30,6 @@ The ability to visualize has always been important, even before coding agents an
 
 Naturally, deeper knowledge in a field is correlated with more detailed visualization, which is why I think it makes total sense that an expert with a coding agent will always be able to deliver more impact than a novice with a coding agent.
 
-Novices may be generating non-optimal, inaccurate, slop code without even realizing what they are producing is slop. That's not actually a limitation of AI, but rather a limitation of the user. Since the novice is actually unable to distinguish between what's slop vs not slop (good vs bad), it is actually totally possible that the coding agent may generate something that perfectly satisfies the user's description, yet is simultaneously bad.
+Novices may be generating non-optimal, inaccurate, slop code without even realizing what they are producing is slop. That's not a limitation of AI, but rather a limitation of the user. Since the novice is unable to distinguish between what's slop vs not slop (good vs bad), it is totally possible that the coding agent may generate something that perfectly satisfies the user's description, yet is simultaneously bad.
 
-A final conclusion we can draw from this is that in today's state of AI and coding agents, it still looks like AI won't be able to replace humans yet - and actually it's quite the opposite. Experts are actually able to increasingly amplify their positive impact more than ever, while novices are only able to amplify generation of slop (negative impact) since they cannot actually visualize the difference between slop vs not slop.
+A final conclusion we can draw from this is that in today's state of AI and coding agents, it still looks like AI won't be able to replace humans yet - and actually it's quite the opposite. Experts are able to increasingly amplify their positive impact more than ever, while novices are only able to amplify generation of slop (negative impact) since they cannot visualize the difference between slop vs not slop.
